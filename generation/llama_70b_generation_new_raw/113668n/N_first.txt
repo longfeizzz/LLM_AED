@@ -1,0 +1,3 @@
+1. The statement only mentions that Section 414 has some role in balancing allowance allocations, but the context actually states that the Administrator reduces allocations, not Section 414 itself.
+2. The context implies that Section 414 imposes requirements, but it does not explicitly state that these requirements are aimed at balancing allowance allocations.
+3. The term "balance" is not present in the context, which instead mentions "reduce" and "pro rata", indicating a possible reduction rather than a balancing act.

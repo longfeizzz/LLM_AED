@@ -1,0 +1,7 @@
+1. The statement is in the third person and singular, while the context is in the third person plural.
+2. The subject "questions" in the context is not the same as the subject "questions" in the statement.
+3. The context is referring to "questions" in general, while the statement is referring to a subset of "questions referenced".
+4. The verb tense in the statement is not consistent with the context.
+5. The statement implies a specific type of questions, while the context is more general.
+6. The subject in the statement is not specified, while the context implies a specific set of questions.
+7. The statement implies a necessity, while the context implies a possibility.

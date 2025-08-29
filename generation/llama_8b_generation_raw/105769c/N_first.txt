@@ -1,0 +1,6 @@
+1. The statement is about a requirement that doesn't apply to the speaker.
+2. The statement is about a general requirement that doesn't apply specifically to the speaker's situation.
+3. The statement is about a requirement that is typically applied in a different year than the one the speaker is in.
+4. The statement is about a requirement that the speaker's school doesn't have.
+5. The statement is about a requirement that is not relevant to the speaker's decision-making process.
+6. The statement is about a requirement that is superseded by other factors (e.g., the speaker's performance in chemistry).

@@ -1,0 +1,2 @@
+1. The context does not exclude other uses of signatures beyond attestations, verifications, and approvals.
+2. The statement assumes exclusivity that is not supported by the given context.

@@ -1,0 +1,2 @@
+1. The context states co-requesters cannot restrict the timing of the release after issuance, but does not specify what happens before the product is issued.
+2. The reference of "they" in the statement is ambiguous and may not refer to co-requesters.

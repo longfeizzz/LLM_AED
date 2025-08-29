@@ -1,0 +1,2 @@
+1. The statement directly matches the sentiment expressed in "This doesn't look good."
+2. Both phrases indicate a negative perception of the situation.

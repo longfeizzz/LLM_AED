@@ -1,0 +1,4 @@
+1. FGD systems and SCR systems serve different purposes and have distinct designs.
+2. FGD systems typically use liquid absorbents while SCR systems use catalysts and reductants.
+3. The placement of FGD systems near the ground is not related to replicating SCR systems' functionality.
+4. SCR systems are usually installed higher up in the flue gas path for optimal ammonia distribution.

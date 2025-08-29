@@ -1,0 +1,6 @@
+1. The statement is too specific.
+2. The statement lacks ambiguity.
+3. The statement has a clear duration.
+4. The statement is not vague.
+5. The statement does not leave room for interpretation.
+6. The statement has a clear and specific timeline.

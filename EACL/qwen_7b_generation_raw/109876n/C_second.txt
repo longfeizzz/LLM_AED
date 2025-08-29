@@ -1,0 +1,3 @@
+1. The text does not contain specific calculations for GDP or GNP.
+2. It focuses on conceptual differences between NIPA and federal unified budget rather than calculation methods.
+3. The text likely provides definitions or explanations rather than detailed computational procedures.

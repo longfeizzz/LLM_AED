@@ -1,0 +1,6 @@
+1. The context restricts the scope of information to the evaluation itself.
+2. The evaluation provides the only relevant information.
+3. Other information is not considered in the context of the evaluation.
+4. The available information is limited to the evaluation's statements.
+5. The evaluation contains all necessary information for assessment.
+6. External information is not relevant to the evaluation's assessment.

@@ -1,0 +1,2 @@
+1. The context restricts the information to only evaluation questions, implying no other types of statements are provided.
+2. Evaluation questions inherently require evaluative statements as answers, leaving no space for non-evaluative content.

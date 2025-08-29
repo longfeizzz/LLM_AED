@@ -1,0 +1,2 @@
+1. Well-designed studies report narrower uncertainty bounds compared to studies of lesser quality.
+2. The context explicitly states that there is variability in the level of uncertainty across different types of studies.

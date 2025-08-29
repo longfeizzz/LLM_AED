@@ -1,0 +1,12 @@
+1. Lack of specific information about the current approaches.
+2. Uncertainty about the rate or extent of change in approaches.
+3. No basis to assume a significant change in approaches.
+4. No information about the time frame in which approaches might change.
+5. No information about the reasons for any potential changes in approaches.
+6. Uncertainty about the definition of "a lot" of change.
+7. The statement could be true for some agencies but not others.
+8. The statement could be true at some point in time but not others.
+9. The statement could be true for some missions but not others.
+10. The statement could be true for some aspects of mission achievement but not others.
+11. No clear connection between the variation in approaches and the potential for change.
+12. The statement is too vague to be determined as true or false.

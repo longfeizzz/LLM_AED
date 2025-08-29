@@ -1,0 +1,2 @@
+1. The context specifies that the number of lost mail pieces is "too small" to have a significant impact, implying it occurs rarely rather than occasionally.
+2. The statement suggests occasional loss, which is more frequent than the context indicates.

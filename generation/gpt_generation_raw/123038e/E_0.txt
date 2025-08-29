@@ -1,0 +1,3 @@
+1. "Attestation engagements" and "validation engagements" are being used interchangeably, both referring to engagements that require reporting on standards.
+2. Both statements assert the necessity of stating compliance with generally accepted government auditing standards (GAGAS) in engagement reports.
+3. The statements both refer to expressing, in the report, adherence to government auditing standards, implying the same reporting requirement.

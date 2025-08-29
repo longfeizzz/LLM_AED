@@ -1,0 +1,2 @@
+1. The context expresses a negative sentiment but does not specify the severity, so “really bad” might be an exaggeration not supported by the context.
+2. “Doesn’t look good” could mean anything from mildly negative to terrible, making it unclear if “really bad” accurately captures the intended intensity.

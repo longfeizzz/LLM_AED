@@ -1,0 +1,4 @@
+1. The statement implies that mail loss is a rare occurrence.
+2. The frequency of mail loss is low enough to be considered occasional.
+3. The number of lost mail pieces is small, implying that occasional mail loss is true.
+4. The context indicates that occasional mail loss has no material impact, supporting the statement.

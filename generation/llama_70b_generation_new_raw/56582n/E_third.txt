@@ -1,0 +1,2 @@
+1. The number of mail pieces lost is described as "too small", implying it does not happen frequently.
+2. The impact of lost mail on First-Class volume is stated to be non-material, suggesting that the occurrences of lost mail are infrequent enough to not have a significant effect.

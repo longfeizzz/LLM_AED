@@ -1,0 +1,3 @@
+1. The statement is true because the context mentions Monday's question, implying there was a question on Monday, and logically, there could be a question on Tuesday as well.
+2. The statement is true because the context does not explicitly state that there was only one question on Monday, allowing for the possibility of multiple questions on different days, including Tuesday.
+3. The statement is true because the context does not provide any information that would contradict the existence of a question on Tuesday.

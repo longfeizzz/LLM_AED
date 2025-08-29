@@ -1,0 +1,4 @@
+1. The statement does not specify different payment tiers based on lawyer status.
+2. Retired lawyers are exempt from paying any amount.
+3. Inactive lawyers only pay $90, which is less than the suggested $90 for all lawyers.
+4. The context implies that payment varies by lawyer status, contradicting a flat rate for all.

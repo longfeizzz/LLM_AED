@@ -1,0 +1,2 @@
+1. The avenue, which reaches to the sea, measures less than three blocks long, indicating the sea is located within that distance.
+2. If the avenue extends to the sea and is less than three blocks, the sea must be situated less than three blocks from the start of the avenue.

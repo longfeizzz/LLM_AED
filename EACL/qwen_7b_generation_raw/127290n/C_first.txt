@@ -1,0 +1,4 @@
+1. Case studies often involve qualitative methods, while data collection may include quantitative methods, making their logics distinct.
+2. Case studies focus on deep, detailed examination of specific instances, whereas data collection is broader and more general.
+3. The logic in case studies typically involves interpretive analysis, while data collection primarily aims at systematic observation and measurement.
+4. Case studies may use triangulation of multiple sources, unlike data collection which might rely on a single or limited set of data points.

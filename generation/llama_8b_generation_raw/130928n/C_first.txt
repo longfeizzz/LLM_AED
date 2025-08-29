@@ -1,0 +1,7 @@
+1. The speaker is downplaying the importance of the issue.
+2. The issue is not significant enough to warrant attention.
+3. The speaker is advising against dwelling on the problem.
+4. There are things that are more important to focus on.
+5. The speaker is suggesting that the issue is minor.
+6. Ignoring the issue is a viable solution.
+7. The speaker believes that the issue will resolve itself.

@@ -1,0 +1,2 @@
+1. The context specifies that the number of lost mail pieces is small and does not significantly affect First-Class volume, implying occasional but not frequent loss.
+2. The statement uses "occasionally" and "not often" which align with the context's description of a small, manageable number of lost mail pieces.

@@ -1,0 +1,2 @@
+1. The context indicates that users pick weak passwords and system administrators ignore basic precautions, but it does not provide information about their overall prioritization of security beyond these specific actions.
+2. It is possible that users and system administrators do prioritize security in other ways not mentioned in the context.

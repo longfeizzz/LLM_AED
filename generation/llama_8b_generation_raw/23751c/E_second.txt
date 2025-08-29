@@ -1,0 +1,4 @@
+1. The preference for living in cities could lead to a higher concentration of businesses in urban areas, resulting in a higher percentage of deliveries being to businesses in those areas.
+2. If people prefer living in cities, it may lead to fewer businesses in rural areas, which could explain the lesser percentage of possible deliveries on rural routes being businesses.
+3. The preference for living in cities could result in a more urbanized economy, where businesses are more likely to be located in cities, thus affecting the percentage of deliveries to businesses on rural routes.
+4. Cities tend to have a higher population density, which could lead to a higher number of businesses and thus a higher percentage of deliveries being to businesses in those areas.

@@ -1,0 +1,2 @@
+1. The context does not specify if an email is insufficient or not, only that a hard copy is available.
+2. It is unclear from the context whether an email is an acceptable alternative; the statement's claim about email is not addressed.

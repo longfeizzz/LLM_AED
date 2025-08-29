@@ -1,0 +1,4 @@
+1. The avenue could end before it reaches the sea, so the sea might not actually be within three blocks from the avenue's end.
+2. The context specifies the length of the avenue, not the distance from where the avenue starts or ends to the sea, so the actual distance to the sea could be more than three blocks depending on where the measurement is taken.
+3. "Extends less than three blocks to the sea" might mean the avenue heads in the direction of the sea for less than three blocks, but the sea could be farther away off the avenue's extension.
+4. The statement implies an exact distance, but the context only gives an approximate direction and range, not a precise measurement.

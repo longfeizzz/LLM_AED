@@ -1,0 +1,3 @@
+1. The statement is false because the context explicitly mentions that other functional components of the Postal Service are presumed not to exhibit significant scale economies.
+2. The context does not provide evidence that the Postal Service only operates very large scale economies, it only mentions a presumption about other components.
+3. The statement is an overgeneralization since the context does not rule out the possibility of the Postal Service operating at smaller scales or having components without significant scale economies.

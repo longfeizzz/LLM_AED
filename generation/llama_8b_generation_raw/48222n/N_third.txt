@@ -1,0 +1,6 @@
+1. The statement assumes a uniform lack of prioritization, but the news only addresses one group, leaving the other group's prioritization unknown.
+2. The news targets users for poor password choices, not a general lack of prioritization, and system administrators for ignoring basic security, which could be due to various reasons.
+3. The news does not provide information about system administrators' priorities, only their actions, which may not necessarily reflect their priorities.
+4. The news does not address system administrators' priorities at all, making it impossible to determine their prioritization.
+5. The statement implies a direct comparison between users and system administrators, but the news only discusses one group's behavior, not their prioritization relative to the other group.
+6. The news does not provide a comprehensive picture of both groups' priorities, making it impossible to determine if they both do not prioritize security.

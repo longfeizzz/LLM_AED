@@ -1,0 +1,4 @@
+1. The subgroups are not well-suited for standard screens.
+2. The subgroups may be difficult to identify with standard screens.
+3. The subgroups may be at risk for false negatives with standard screens.
+4. The subgroups may require specialized screens rather than standard ones.

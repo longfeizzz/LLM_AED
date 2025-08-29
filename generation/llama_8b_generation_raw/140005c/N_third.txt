@@ -1,0 +1,3 @@
+1. The follow-up test may be performed with a sample collected at a different time, which could result in a different level of toxicity.
+2. The sample collected for the follow-up test may have a different level of toxicity compared to the sample in the range-finding test.
+3. The conditions of the follow-up test may be different from the range-finding test, leading to different results.

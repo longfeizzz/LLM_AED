@@ -1,0 +1,4 @@
+1. The context mentions expense but does not specify whether the cost is due to watering, fertilizer, or other factors.
+2. The context does not confirm if fertilizer was used or contributed to the expense.
+3. The statement suggests that both watering and fertilizer can be costly, but the context only references the overall expense of keeping grass alive, without itemizing specific costs.
+4. The context refers to "a piece of ground that big," leaving it unclear if the expense is primarily due to the size rather than the inputs listed in the statement.

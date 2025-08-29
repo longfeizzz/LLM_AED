@@ -1,0 +1,2 @@
+1. The definitive test is longer, allowing for more accurate measurement of toxicity over time.
+2. The sample used in the follow-up test might have a different level of toxicity due to being collected at a different time.

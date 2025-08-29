@@ -1,0 +1,2 @@
+1. The context states that the basic requirements of control will not change, but does not specify whether the level of control—specifically, "less control"—will occur; thus, it is not clear whether technology will actually reduce control.
+2. The context mentions changes in the specific control activities and their implementation, but does not indicate whether these changes result in more, the same, or less control.

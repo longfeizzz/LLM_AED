@@ -1,0 +1,5 @@
+1. The relationship is undetermined because the statement contains a condition (five percent of possible residential deliveries are businesses) that is not applicable to the context (rural routes).
+2. The relationship is undetermined because the statement contains a condition (a lesser percentage of possible deliveries on rural routes are businesses) that is not applicable to the context (residential deliveries).
+3. The relationship is undetermined because the statement contains a condition (five percent of possible residential deliveries are businesses) that is not directly related to the percentage of deliveries on rural routes.
+4. The relationship is undetermined because the statement contains a condition (a lesser percentage of possible deliveries on rural routes are businesses) that is not directly related to the percentage of residential deliveries.
+5. The relationship is undetermined because the statement contains a condition (it is thought, but not known) that implies uncertainty, making it difficult to determine the actual relationship.

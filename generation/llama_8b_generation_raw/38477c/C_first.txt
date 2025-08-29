@@ -1,0 +1,5 @@
+1. She wears revealing clothes other than short skirts.
+2. She wears professional clothes other than short skirts.
+3. She wears both revealing and professional clothes, but not all of them are short skirts.
+4. The context does not restrict the type of revealing clothes she wears, only the type of professional clothes.
+5. There is no information about the length of her skirts, only the type of clothes she wears.

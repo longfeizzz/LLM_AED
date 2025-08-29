@@ -1,0 +1,8 @@
+1. The statement does not account for auditors from different countries who may be subject to different governing bodies.
+2. The statement implies a single governing body for all auditors, which may not be the case given the context of auditors from different countries.
+3. The statement does not consider the possibility of auditors reporting to multiple governing bodies.
+4. The statement assumes that there is a single globally managed governing body, which may not exist.
+5. The statement does not address the situation where auditors report to a governing body that is not globally managed.
+6. The governing body may not be globally managed, it may be a regional or country-specific governing body.
+7. The statement does not account for the possibility of auditors reporting to a governing body that is not globally managed but is still acceptable under the country's laws and regulations.
+8. The statement assumes that all auditors must report to a globally managed governing body, which may not be the case given the context of auditors from different countries.

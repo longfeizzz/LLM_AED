@@ -1,0 +1,3 @@
+1. The statement is undetermined because it contradicts the given context, which states that well-designed studies typically report narrower uncertainty bounds than studies of lesser quality.
+2. The statement is undetermined because it fails to account for the variability in study quality, which affects the amount of uncertainty in the results.
+3. The statement is undetermined because it implies a fixed or absolute level of uncertainty, whereas the context suggests that uncertainty can vary between studies.

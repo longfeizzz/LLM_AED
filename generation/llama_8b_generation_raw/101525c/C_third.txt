@@ -1,0 +1,6 @@
+1. The question was on Monday, not Tuesday.
+2. There was no question on Tuesday.
+3. The statement is referring to a different day that is not Monday.
+4. The statement is referring to a different week or time period.
+5. The question was on a different day of the week, but still on the same day of the week as Monday (e.g., Monday's question was asked on Monday, but another question was asked on Tuesday).
+6. The statement is referring to a different type of question (e.g., not a question in the context of the original question).

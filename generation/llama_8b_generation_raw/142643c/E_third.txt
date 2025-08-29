@@ -1,0 +1,2 @@
+1. The statement is false because using the standard technology assumptions is meant to be an addition, not a subtraction, from the AEO2001 reference case projections.
+2. The statement is false because the AEO2001 reference case projections were developed based on the standard technology assumptions, not the other way around.

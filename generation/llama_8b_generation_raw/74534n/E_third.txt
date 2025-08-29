@@ -1,0 +1,5 @@
+1. The train was initially stationary, and then it began to move.
+2. The train was at a standstill and then resumed its motion.
+3. The train was not in motion but then it began to operate.
+4. The train was halted and then it started up again.
+5. The train was motionless and then it began to run.

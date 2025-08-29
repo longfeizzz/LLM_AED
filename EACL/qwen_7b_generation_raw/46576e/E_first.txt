@@ -1,0 +1,5 @@
+1. Ensuring identity prevents unauthorized access, which is a fundamental security measure.
+2. Requiring identity verification aligns with best practices in cybersecurity and risk management.
+3. Identity checks help in maintaining the integrity and confidentiality of information.
+4. Proof of identity minimizes the risk of account hijacking and fraud.
+5. Verifying identity ensures that only authorized individuals have access to sensitive data.

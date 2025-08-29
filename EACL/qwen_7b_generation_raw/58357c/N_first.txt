@@ -1,0 +1,2 @@
+1. The question "What changed?" implies a change occurred, while the statement denies any change took place, leading to contradiction and undetermination.
+2. The context and statement are mutually exclusive; one cannot determine if nothing changed without knowing what was expected to change.

@@ -1,0 +1,3 @@
+1. The context only states that rules have been established, but does not specify how strictly they are enforced.
+2. Establishing rules does not necessarily imply strictness; it could be a formality or standard practice.
+3. There is no information about the nature, number, or enforcement of the rules, so the level of strictness cannot be determined.

@@ -1,0 +1,6 @@
+1. Temporal order established by the context: Carrey's Kaufman was diagnosed first.
+2. The decision to do a show at Carnegie Hall was a consequence of the diagnosis.
+3. The diagnosis occurred before the decision to perform at Carnegie Hall.
+4. The statement reflects a causal relationship: the diagnosis led to the decision.
+5. The diagnosis is presented as a reason for the decision.
+6. The decision was made after the diagnosis was known.

@@ -1,0 +1,4 @@
+1. The context only specifies that larger ski resorts are 90 minutes away, not that the largest resort is 100 minutes away.
+2. The statement contradicts the context by claiming a different travel time specifically for the largest resort.
+3. The context does not mention any resort being 100 minutes away, making the statement unsupported.
+4. "Larger ski resorts" could include the largest one, implying it should also be 90 minutes away, not 100.

@@ -1,0 +1,5 @@
+1. The actual increase was 3 more than the expected increase.
+2. The expected increase was less than the actual increase.
+3. The expected increase and the actual increase are different.
+4. The actual increase exceeded the expected increase.
+5. The expected increase was not achieved.

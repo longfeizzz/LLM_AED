@@ -1,0 +1,4 @@
+1. Lack of contextual information about what the answer refers to.
+2. The statement does not specify the answer Julius was referring to.
+3. The statement does not provide enough information about the timing of Julius's knowledge.
+4. The statement does not clarify if Julius's knowledge of the answer was prior to or after the statement.

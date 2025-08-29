@@ -1,0 +1,12 @@
+1. The speaker is skeptical or unsure about what the other person said.
+2. The speaker is being sarcastic.
+3. The speaker is being ironic.
+4. The speaker is expressing a lack of strong emotions or conviction.
+5. The statement is being made in a humorous or playful tone.
+6. The speaker is being polite but doesn't actually agree.
+7. The speaker is being non-committal or vague.
+8. The speaker is not taking the conversation seriously.
+9. The speaker is expressing a sense of resignation or helplessness.
+10. The speaker is making a comment rather than a statement of fact.
+11. The speaker is being ambiguous or unclear.
+12. The speaker is making a comment about their own credibility or trustworthiness.

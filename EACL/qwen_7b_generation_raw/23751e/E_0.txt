@@ -1,0 +1,4 @@
+1. The context mentions a lesser percentage of businesses among rural deliveries, which could affect the number of pieces delivered.
+2. Five percent of residential deliveries are businesses, impacting the total number of pieces potentially delivered.
+3. Rural areas might have fewer business deliveries compared to residential areas, leading to differences in piece counts.
+4. Residential areas with more business deliveries could result in higher piece counts per delivery.

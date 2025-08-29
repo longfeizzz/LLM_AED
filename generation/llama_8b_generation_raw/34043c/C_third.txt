@@ -1,0 +1,5 @@
+1. The Trump Tower is not mentioned in the context.
+2. The Trump Tower is not located in South King Street.
+3. The Trump Tower is not the Gaiety Theatre.
+4. The statement is about the Trump Tower, while the context is about the Gaiety Theatre.
+5. The statement is about what would be a terrible place to visit for ornate decor, but the context is about what is worth visiting for it.

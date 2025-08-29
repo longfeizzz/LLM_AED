@@ -1,0 +1,5 @@
+1. The actual increase exceeded the expected increase.
+2. The expected increase was a conservative estimate.
+3. The actual increase was higher than the expected increase.
+4. The expected increase was an underestimation.
+5. The expected increase was a low-end projection.

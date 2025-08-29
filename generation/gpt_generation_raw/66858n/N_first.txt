@@ -1,0 +1,4 @@
+1. The context says agencies require and rely on sound information for better management but does not explicitly state what happens when they rely on unsound information.
+2. The context does not specify the consequences (such as management problems) of relying on unsound financial information.
+3. The statement assumes a causal relationship (unsound information leads to management problems) that is not directly asserted in the context.
+4. The context does not address what happens if an agency relies on only partially unsound information or on other compensating factors.

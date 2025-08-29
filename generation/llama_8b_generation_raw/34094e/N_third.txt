@@ -1,0 +1,11 @@
+1. The speaker is using a polite response.
+2. The speaker is disagreeing with the question.
+3. The speaker is expressing uncertainty.
+4. The speaker is refusing to answer the question.
+5. The speaker is providing a negative response to a command.
+6. The speaker is acknowledging a lack of knowledge.
+7. The speaker is showing respect through politeness.
+8. The speaker is not providing a straightforward answer.
+9. The speaker is indicating a lack of agreement with the question's assumption.
+10. The speaker is being evasive.
+11. The speaker is responding in a manner that is typical of French culture.

@@ -1,0 +1,9 @@
+1. The newspaper may receive very few letters in total.
+2. The letters chosen might be from the same reader, but on different weeks.
+3. The letters chosen might be from the same reader, but the newspaper publishes the letters in a different order than they were received.
+4. The newspaper may publish a letter that was not chosen by the editor, but rather by someone else.
+5. The letters are chosen from a pool that includes submissions from the newspaper's staff or other sources, not just readers.
+6. The letters are chosen from a pool that includes submissions from the newspaper's staff or other sources, and the newspaper publishes a letter from one of these sources each week.
+7. The newspaper publishes a letter that was written by the editor or a staff member, but attributed to a reader.
+8. The newspaper publishes a letter that was submitted by a reader, but the editor has heavily edited it to the point where it is no longer the original submission.
+9. The newspaper publishes a letter that was submitted by a reader, but the editor has chosen to publish it under

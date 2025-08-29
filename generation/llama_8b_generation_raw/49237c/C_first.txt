@@ -1,0 +1,5 @@
+1. The speaker's house was rebuilt or repaired after the attempted burning.
+2. The speaker's house is not the one that was burned down.
+3. The statement 'you burned down my house' is false, as the speaker's house was not burned down.
+4. The attempted burning was unsuccessful, but the speaker's house was damaged in some way, not just perfect.
+5. The statement'my house is in perfect state' is false, as the house is not in perfect state due to the attempted burning.

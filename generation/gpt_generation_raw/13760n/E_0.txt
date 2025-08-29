@@ -1,0 +1,2 @@
+1. Overestimating how far the CPI is off could lead to officially adopting a lower, underestimated CPI, which would not accurately track inflation.
+2. An institutionalized underestimated CPI would result in a hidden or "stealth" tax increase every year, negatively impacting taxpayers.

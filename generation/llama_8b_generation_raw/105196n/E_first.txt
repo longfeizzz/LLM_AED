@@ -1,0 +1,10 @@
+1. San'doro's statement expressed confidence.
+2. San'doro's statement implied a level of confidence that led to certainty.
+3. San'doro's statement indicated that he or someone else was confident.
+4. San'doro's statement expressed a belief in the truth of the statement.
+5. San'doro's statement implied that the statement was true.
+6. The speaker and San'doro agreed on the statement's truth.
+7. San'doro's statement was a declaration of confidence in the statement.
+8. San'doro's statement indicated that the statement was a fact.
+9. San'doro's statement expressed a high degree of confidence in the statement.
+10. San'doro's statement implied that the speaker and he or she were in agreement on the statement's truth.

@@ -1,0 +1,2 @@
+1. The context does not specify whether the hypothetical market situations presented to respondents are the same for everyone or if they vary among respondents.
+2. Survey designs for contingent valuation can include different scenarios for different groups to test for robustness or framing effects, which is not addressed in the context.

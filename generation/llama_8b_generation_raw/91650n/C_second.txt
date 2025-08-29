@@ -1,0 +1,4 @@
+1. The statement is a question, and the context is a statement.
+2. The statement implies a reason for being heavy ("in case you were wondering"), which is not mentioned in the context.
+3. The context suggests that self-propulsion is the reason for being heavy, but the statement reverses the order.
+4. The context implies that the speaker is stating a fact, while the statement is a question.

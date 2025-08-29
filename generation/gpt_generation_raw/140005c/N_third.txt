@@ -1,0 +1,2 @@
+1. The duration of the definitive test is longer, which could lead to different observed toxicity outcomes.
+2. The sample used in the definitive test might be collected at a different time, meaning its toxicity could differ significantly from the sample used in the range-finding test.

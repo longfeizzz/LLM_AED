@@ -1,0 +1,4 @@
+1. The quality of the studies varies, with well-designed studies having narrower uncertainty bounds.
+2. Studies of lesser quality have wider uncertainty bounds than well-designed studies.
+3. The amount of uncertainty is not the same for all studies, especially when comparing high-quality and low-quality studies.
+4. The uncertainty bounds around the best estimate differ between studies of varying quality.

@@ -1,0 +1,5 @@
+1. The statement is false given the context, as the context assumes a roughly proportional relationship.
+2. The statement contradicts the underlying assumption in the context that the relationship is roughly proportional.
+3. The context implies that the AC usage is directly related to the MWe of coal-fired facilities equipped with the technology, making the statement incorrect.
+4. The statement is inconsistent with the context's assumption of an average capacity factor of 85 percent.
+5. The context implies that the AC usage should be lower than the MWe of coal facilities, not higher.

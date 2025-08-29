@@ -1,0 +1,4 @@
+1. The statement is undetermined because it implies a change in the basic requirements of control, whereas the context suggests that the basic requirements will remain unchanged.
+2. The statement is undetermined because it contradicts the context by suggesting a reduction in control, whereas the context implies that control activities will change but the basic requirements will remain the same.
+3. The statement is undetermined because it does not specify the type or extent of control that will be affected by technology, making it unclear whether control will be reduced or simply implemented differently.
+4. The statement is undetermined because it focuses on the means of control (technology) rather than the basic requirements of control, which are the core elements that will remain unchanged according to the context.

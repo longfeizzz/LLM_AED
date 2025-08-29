@@ -1,0 +1,2 @@
+1. The context mentions keeping to the shade, but does not specify whether the shade comes from buildings, trees, or other sources, so the presence or absence of building-provided shade is not determined.
+2. The statement asserts there is no shade because of low buildings, but the context provides no information about the height of buildings or their ability to cast shade.

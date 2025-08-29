@@ -1,0 +1,4 @@
+1. The statement is a direct paraphrase of the question, using the same words to convey the same meaning.
+2. The statement is a polite inquiry about the listener's desire for a cup of tea.
+3. The statement is a literal interpretation of the question, assuming the listener is being asked if they want a cup of tea.
+4. The statement is a confirmation of the speaker's offer to provide a cup of tea.

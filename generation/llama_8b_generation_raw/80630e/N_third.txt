@@ -1,0 +1,4 @@
+1. The statement is an inference of the given information and the word "even" in the statement is ambiguous and can be interpreted in different ways.
+2. The given information only states the distance to the sea in terms of blocks, but the word "blocks" can be interpreted in different ways (e.g., walking blocks, driving blocks).
+3. The given information only provides a lower bound (less than three blocks) and does not provide an upper bound, making it impossible to determine if the statement is true or false.
+4. The word "even" in the statement implies a direct comparison, but the given information only provides a general statement about the distance to the sea.

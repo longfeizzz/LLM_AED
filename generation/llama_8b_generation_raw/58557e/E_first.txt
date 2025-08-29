@@ -1,0 +1,3 @@
+1. The IRS does not capture data for calls before a caller reaches an agent.
+2. The IRS does not have a record of calls where callers are discouraged.
+3. The IRS does not track or record the time spent waiting for an agent.

@@ -1,0 +1,3 @@
+1. The term "national" can be interpreted to mean "regional" in the context of a country being divided into regions, thus national emissions could be seen as the sum of regional emissions.
+2. The statement might be assuming that the exhibit's data is further divisible into regional emissions, even if not explicitly stated, implying that national emissions are comprised of regional emissions.
+3. The word "national" could be considered a synonym for "regional" in a broad sense, where national refers to the overall emissions of a nation, which can be broken down into regional emissions.

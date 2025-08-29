@@ -1,0 +1,8 @@
+1. The statement contradicts the assumption of a direct proportionality between AC usage and total MWe from coal facilities.
+2. The statement implies that the average capacity factor of 85 percent is not accurate or is not considered in the calculation.
+3. The statement suggests that the assumptions listed in Tables 4-4 and 4-5 are not valid or are not applicable.
+4. The statement implies that the actual AC usage for mercury control is not directly related to the total MWe from coal facilities.
+5. The statement could be true if the AC usage for mercury control is significantly higher than the estimated MWe from coal facilities due to other factors not considered in the context.
+6. The statement might be true if there are coal facilities that are equipped with the technology but not included in the total MWe calculation.
+7. The statement could be undetermined due to lack of information about the actual AC usage and total MWe from coal facilities.
+8. The statement might be undetermined due to the complexity of the relationship between AC usage and MWe from coal facilities.

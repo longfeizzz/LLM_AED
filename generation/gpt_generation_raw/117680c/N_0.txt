@@ -1,0 +1,2 @@
+1. The context does not specify what the rules could have been; it only states what they were, leaving open the possibility that they might have been issued as something else.
+2. The context assumes but does not prove the exclusive nature of rule types, so it's undetermined if the rules might fall under both categories or if the definitions overlap.

@@ -1,0 +1,3 @@
+1. The report is explicitly restricted by a law.
+2. The report is restricted by a law that is not mentioned but implied.
+3. The report's restricted status is inferred from the context that it is not publicly available.

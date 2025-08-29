@@ -1,0 +1,5 @@
+1. The report's restriction status is not explicitly known.
+2. The report may be restricted by regulation.
+3. The report may be restricted by law.
+4. The statement implies a high likelihood of restriction, but it does not necessarily follow that the report should not be ensured.
+5. The report's restriction status is not the primary factor in ensuring public inspection.

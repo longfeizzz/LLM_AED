@@ -1,0 +1,5 @@
+1. The statement is true but the context implies a contradiction with the expected environment of the mountains.
+2. The statement is true but the context describes a specific environment (brown and dry) that does not necessarily align with the mountains.
+3. The statement is true but the context suggests an unexpected or unusual situation.
+4. The statement is true but the context is focusing on the environment rather than the location.
+5. The statement is true but the context is implying a different aspect of the situation (environment) rather than the location.

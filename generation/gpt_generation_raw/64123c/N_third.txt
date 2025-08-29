@@ -1,0 +1,2 @@
+1. The context "Per week?" asks about the frequency within a week, while the statement "Every day" gives a daily frequency, but it is not explicitly clear if "Every day" refers to every day of the week or something else.
+2. There is insufficient information to determine if "Every day" is a direct answer to "Per week?" or if it refers to a different time frame or activity not specified in the context.

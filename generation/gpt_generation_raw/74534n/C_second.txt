@@ -1,0 +1,2 @@
+1. The context only indicates that the back of the train was lying still on the tracks, with no mention of the train starting to move.
+2. There is no information in the context about any change in the train's motion or that it started up after being still.

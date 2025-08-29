@@ -1,0 +1,2 @@
+1. The context lists multiple possible types of CIOs and suggests that the required type depends on the organization's objectives, implying that being an operations specialist is only one of several possibilities, not a necessity in all cases.
+2. The context allows for any combination of roles, so a CIO might fulfill other roles or combinations that do not include operations specialist.

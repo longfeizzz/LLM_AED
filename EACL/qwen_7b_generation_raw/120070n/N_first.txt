@@ -1,0 +1,2 @@
+1. The statement conflates two different time limits: a ten-minute overall limit and a five-second "good-bye" command.
+2. The context suggests variability in when someone might be told to stop speaking, which is not explicitly stated in the statement.

@@ -1,0 +1,3 @@
+1. The context specifies the avenue extends less than three blocks to the sea but does not state whether the sea itself is within three blocks or if there is additional distance beyond the avenue before reaching the sea.
+2. It is unclear if the measurement ("less than three blocks") is direct or refers only to the portion of the avenue, not the total distance to the sea.
+3. The starting point of the measurement (where the avenue begins) is not defined, so the total distance from an arbitrary reference point to the sea is ambiguous.

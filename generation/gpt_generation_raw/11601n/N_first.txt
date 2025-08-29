@@ -1,0 +1,2 @@
+1. The context states AC usage is proportional to total MWe, but does not provide any information indicating that AC usage could exceed total MWe.
+2. Required numerical data comparing actual AC usage and total MWe is not provided.

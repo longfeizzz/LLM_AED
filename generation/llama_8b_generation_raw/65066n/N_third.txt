@@ -1,0 +1,4 @@
+1. The statement contradicts the information given in the context, but it does not provide enough information to determine the relationship between the two statements.
+2. The context does not specify what "larger" means, so it is unclear if the statement is true or false.
+3. The statement uses a different measure ("minutes away") than the context ("90 minutes away"), making it unclear how to compare the two.
+4. The statement and the context are talking about different resorts, making it unclear if they are referring to the same thing.

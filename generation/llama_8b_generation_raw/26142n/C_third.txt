@@ -1,0 +1,4 @@
+1. The statement is too broad, as it includes goods that may not be imported.
+2. Duties are not exclusive to imported goods.
+3. The statement assumes that all imported goods have duties, but some may be exempt.
+4. The statement assumes that duties are always required, but some imports may be duty-free.

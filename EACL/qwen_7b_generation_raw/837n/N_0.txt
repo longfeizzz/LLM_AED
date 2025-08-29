@@ -1,0 +1,3 @@
+1. The context does not specify which organizations are included under "public organizations." 
+2. Strategic planning could be a feature for some public organizations but not necessarily all.
+3. The statement does not explicitly state that all public organizations must adopt these features.

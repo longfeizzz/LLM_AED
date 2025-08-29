@@ -1,0 +1,4 @@
+1. The contingent valuation approach is standardized to ensure uniformity across all respondents.
+2. The hypothetical market situations are designed to be identical for all respondents in the survey.
+3. The respondents are presented with the same set of hypothetical market scenarios.
+4. The survey aims to minimize variability by using the same hypothetical market situations for all respondents.

@@ -1,0 +1,10 @@
+1. The statement doesn't account for outputs without any associated resources.
+2. It doesn't consider the possibility of resources being irrelevant or unnecessary for some outputs.
+3. The statement implies a universal rule, but resources can be context-dependent.
+4. It doesn't acknowledge the existence of outputs without any discernible resources.
+5. The statement is too broad, failing to distinguish between necessary and unnecessary resources.
+6. It assumes all outputs have some kind of resource, but this might not be the case in certain scenarios.
+7. The statement doesn't account for outputs that are not resource-dependent.
+8. It doesn't consider the possibility of outputs being resource-free by design.
+9. The statement is too vague, failing to specify what constitutes a "resource".
+10. It doesn't account for outputs that have multiple resources, but none are relevant.

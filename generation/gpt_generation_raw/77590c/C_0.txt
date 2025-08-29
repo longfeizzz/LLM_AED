@@ -1,0 +1,2 @@
+1. The context is a question asking for an opinion or confirmation, not a statement asserting that most states have that, so the statement attributes an assertion that isn't present in the context.
+2. The statement expresses a personal belief, while the context does not reveal any inclination toward agreement or belief, only curiosity.

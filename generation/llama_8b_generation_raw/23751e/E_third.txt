@@ -1,0 +1,4 @@
+1. The fact that five percent of possible residential deliveries are businesses suggests that a higher percentage of residential deliveries are non-business, contributing to the difference in pieces per possible delivery.
+2. The presence of businesses in five percent of residential deliveries may lead to a higher average number of pieces per possible delivery in residential areas compared to rural routes.
+3. If a lesser percentage of possible deliveries on rural routes are businesses, it could contribute to the difference in pieces per possible delivery between residential and rural routes.
+4. The statement that a lesser percentage of possible deliveries on rural routes are businesses suggests that rural

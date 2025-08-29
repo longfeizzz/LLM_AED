@@ -1,0 +1,2 @@
+1. If the door was stuck, it would not move when someone tried to open or close it, which explains why it did not budge.
+2. The lack of movement described as "did not budge" can be caused by the door being stuck.

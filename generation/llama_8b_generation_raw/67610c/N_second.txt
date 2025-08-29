@@ -1,0 +1,5 @@
+1. The statement is too similar to the context to be considered distinct.
+2. The statement is a paraphrase of the context and thus not an inference.
+3. The context implies a sense of resignation, but the statement implies confidence.
+4. The statement's tone is more assertive than the context's tone.
+5. The statement does not provide enough information to make a comparison with the context.

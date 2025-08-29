@@ -1,0 +1,5 @@
+1. The statement is too specific about the cause of the temperature (sweat) while the context only mentions a condition (high humidity).
+2. The statement implies a direct cause-and-effect relationship between sweat and temperature, which is not explicitly supported by the context.
+3. The statement focuses on a symptom (sweat) rather than the underlying condition (high humidity) described in the context.
+4. The statement assumes a specific temperature range that may not be universally applicable to all situations with high humidity.
+5. The context does not provide enough information to determine if the statement is true or false, making it undetermined.

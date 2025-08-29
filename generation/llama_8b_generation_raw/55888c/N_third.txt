@@ -1,0 +1,5 @@
+1. The statement is a fact, but the speaker is asking a question implying they already know the answer, making the relationship uncertain.
+2. The statement is a fact, but the speaker's tone suggests they are trying to deflect or hide something, making the relationship uncertain.
+3. The speaker is asking a rhetorical question, implying Poirot definitely has the keys, making the relationship false.
+4. The speaker is trying to trick Poirot into revealing information, making the relationship uncertain.
+5. The statement is a fact, but the speaker's question is a test of Poirot's honesty, making the relationship uncertain.

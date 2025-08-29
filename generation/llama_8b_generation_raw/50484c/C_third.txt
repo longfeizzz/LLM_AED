@@ -1,0 +1,4 @@
+1. The statement contradicts the conclusion drawn from the experiments that the results were in line with random chance.
+2. The experiments did not show that the predictor was better, as the results were random.
+3. The experiments failed to prove anything about the predictor's performance.
+4. The statement is false because it was the opposite of what the experiments showed.

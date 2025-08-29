@@ -1,0 +1,2 @@
+1. The context specifies that the importer pays duties but does not explicitly state that all imported goods necessarily have duties; it is possible some imported goods could be exempt from duties.
+2. The context refers to duties "required by law," implying that only goods subject to such laws have duties, but leaves open the possibility that some imported goods may not be covered by these laws.

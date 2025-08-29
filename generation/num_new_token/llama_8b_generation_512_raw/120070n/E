@@ -1,0 +1,5 @@
+1. The initial time limit is ten minutes, but it can be shortened.
+2. There is a primary time limit, but there are additional time constraints that can override it.
+3. The time limit is not always strictly enforced, allowing for early termination in certain situations.
+4. The ten-minute limit serves as a maximum, but the actual time to end the conversation may be shorter.
+5. The time limit is subject to change, and in some cases, it may be reduced.
