@@ -1,0 +1,2 @@
+1. The statement implies a change in the train's state from not moving to moving, but the context only describes the train's position and does not mention it starting to move.
+2. The context suggests the train was already in a stationary position, as indicated by the phrase "lying still on the tracks", with no indication of a transition to movement.

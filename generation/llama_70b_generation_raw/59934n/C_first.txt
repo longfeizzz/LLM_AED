@@ -1,0 +1,3 @@
+1. The context states that the programs did not capture manufacturing and product reliability knowledge, which implies a lack of thorough analysis or identification of issues.
+2. There is no mention of the programs being capable of locating anomalies in the data, suggesting that this task may not be within their scope or functionality.
+3. The focus of the context is on what the programs did not do, specifically capturing knowledge consistent with best practices, rather than on identifying anomalies.

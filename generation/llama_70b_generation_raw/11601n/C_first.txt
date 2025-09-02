@@ -1,0 +1,2 @@
+1. The statement implies a greater than proportional relationship, which contradicts the given context that the AC usage should be roughly proportional to the total MWe.
+2. The context assumes an average capacity factor of 85 percent, which suggests that the actual MWe output is a fraction of the total capacity, making it unlikely for AC usage to exceed total MWe.

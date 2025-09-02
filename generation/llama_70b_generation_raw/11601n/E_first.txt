@@ -1,0 +1,3 @@
+1. The average capacity factor of coal-fired facilities equipped with mercury control technology is less than 85 percent.
+2. The assumptions in Tables 4-4 and 4-5 do not accurately reflect real-world conditions, leading to an underestimation of required AC usage.
+3. There are additional factors beyond those considered in Tables 4-4 and 4-5 that contribute to increased AC usage for mercury control.
