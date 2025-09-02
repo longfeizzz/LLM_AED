@@ -1,3 +1,0 @@
-1. The context does not specify that the designs are for system redesigns, only that they are permitted in general.
-2. The context mentions synthesis of individual case studies, but does not limit the designs to system redesigns.
-3. The statement adds a new constraint ("for system redesigns") not present in the original context.

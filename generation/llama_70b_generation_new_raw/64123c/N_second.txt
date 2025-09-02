@@ -1,3 +1,0 @@
-1. The context is asking about a frequency per week, but the statement is providing a frequency per day.
-2. The units of time in the context and the statement do not match.
-3. There is no clear way to directly compare or relate "per week" to "every day" without additional information.

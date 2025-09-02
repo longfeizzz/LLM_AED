@@ -1,3 +1,0 @@
-1. The context only provides a lower bound for the price of newspaper preprints, not an upper bound.
-2. The statement mentions a price in dollars, while the context mentions a price in cents, making a direct comparison difficult without conversion.
-3. The context implies that the price is low due to marginal costs being very low, which contradicts the idea of a high price like $5.

@@ -1,2 +1,0 @@
-1. Well-designed studies have narrower uncertainty bounds compared to studies of lesser quality, indicating varying levels of uncertainty.
-2. The context explicitly states that the amount of uncertainty differs between well-designed and lesser-quality studies.

@@ -1,2 +1,0 @@
-1. The item was found on clearance, indicating it was a sale item, not a non-sale item.
-2. The context does not explicitly state that all items bought were non-sale, only that the specific item mentioned was found on clearance.

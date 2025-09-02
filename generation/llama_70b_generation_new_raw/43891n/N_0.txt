@@ -1,3 +1,0 @@
-1. The subject matter of the recommendation is unrelated to the context.
-2. The context specifies the Secretary of Defense as the target of the recommendation, whereas the statement addresses a general "you".
-3. The context is focused on policy and guidance revision, whereas the statement pertains to dietary advice.

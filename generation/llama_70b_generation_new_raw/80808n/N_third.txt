@@ -1,3 +1,0 @@
-1. The context only mentions a specific feature on the Chatterbox page, not the overall design of the site.
-2. The statement implies a general intention for the entire site, while the context only provides information about a particular page.
-3. There is no explicit statement about the site's overall user-friendliness, only a convenience provided by a single button.

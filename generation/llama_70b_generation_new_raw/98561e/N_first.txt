@@ -1,3 +1,0 @@
-1. The context only provides a negative evaluation ("was it bad") without explicitly confirming or denying the statement, which is also a negative evaluation ("Was it not good").
-2. The context does not provide enough information to determine the relationship between "bad" and "not good", as they could be related but not exactly equivalent in this specific situation.
-3. The statement is a question and the context is also a question, so there is no definitive answer to determine the relationship between them.

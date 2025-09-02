@@ -1,3 +1,0 @@
-1. The statement implies similarity in design or function, but the context suggests a difference in construction location between FGD and SCR systems.
-2. FGD systems and SCR systems have distinct technological purposes, with FGD focusing on removing sulfur dioxide and SCR on reducing nitrogen oxides, making replication unlikely.
-3. The context mentions FGD systems in relation to their physical placement, not their operational or design replication of SCR systems.

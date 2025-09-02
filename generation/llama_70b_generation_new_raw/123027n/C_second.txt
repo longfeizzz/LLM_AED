@@ -1,2 +1,0 @@
-1. The context only mentions high humidity, but does not explicitly state the temperature is warm.
-2. Sweaty temperatures imply a high temperature, but the context does not provide information about the temperature, only the humidity.

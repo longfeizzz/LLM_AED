@@ -1,3 +1,0 @@
-1. The statement claims the door "wasn't unlocked", which is the opposite of what is exclaimed in the context, "But the door was locked".
-2. The context indicates a state of surprise or realization that the door was locked, whereas the statement suggests surprise that it was not unlocked, which is a contradictory reaction.
-3. The original exclamation "But the door was locked" implies that the door's locked state was unexpected, whereas the statement "But the door wasn't unlocked" would imply that the expectation was for it to be unlocked, which contradicts the context.

@@ -1,3 +1,0 @@
-1. The statement mentions a 5 percent processing threshold, but the context discusses transaction processing consuming about 69 percent of costs, indicating a much larger portion of finance costs are dedicated to processing.
-2. The context does not mention a specific "5 percent processing" activity, making it unclear what the statement refers to in relation to the provided information.
-3. Eliminating 5 percent of processing would still leave a significant portion (64 percent, if 5 percent is subtracted from 69 percent) of finance costs dedicated to transaction processing and other routine accounting activities.

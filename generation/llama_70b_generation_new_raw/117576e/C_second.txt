@@ -1,3 +1,0 @@
-1. The statement is a paraphrase of the context and does not provide new information, thus it does not have a truth value that can be evaluated as false.
-2. The context expresses uncertainty about the time required, using phrases like "I don't know" and "how long", whereas the statement makes a more definitive claim.
-3. The context mentions questioning the person as part of the process, which the statement does not, potentially implying different understandings of what "getting inside a person's head" entails.

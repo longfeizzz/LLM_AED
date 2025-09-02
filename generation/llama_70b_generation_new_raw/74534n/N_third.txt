@@ -1,3 +1,0 @@
-1. The context only mentions the location and state of the back of the train, not the entire train, so it's unclear if the whole train was moving or not.
-2. The statement implies a change in the train's state over time, but the context only provides a single snapshot of the train's state, without information about what happened before or after.
-3. The phrase "lying still on the tracks" suggests that the back of the train was not moving at the time described, but it does not provide information about the train's state at other times, including the possibility of it starting up later.
