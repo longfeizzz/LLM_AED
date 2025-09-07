@@ -9,10 +9,10 @@ from pathlib import Path
 REQ_FIELDS = ["id", "premise", "hypothesis", "generated_explanations"]
 
 SOURCE_BY_PATH = {
-    str(Path("/Users/phoebeeeee/ongoing/LLM_AED/no_preprocessing/llama_8b_generation_raw.jsonl").resolve()): "llama8b",
-    str(Path("/Users/phoebeeeee/ongoing/LLM_AED/no_preprocessing/llama_70b_generation_raw.jsonl").resolve()): "llama70b",
-    str(Path("/Users/phoebeeeee/ongoing/LLM_AED/no_preprocessing/qwen_7b_generation_raw.jsonl").resolve()): "qwen7b",
-    str(Path("/Users/phoebeeeee/ongoing/LLM_AED/no_preprocessing/qwen_72b_generation_raw.jsonl").resolve()): "qwen72b",
+    str(Path("/Users/phoebeeeee/ongoing/LLM_AED/new_processing/llama_8b_generation_raw.jsonl").resolve()): "llama8b",
+    str(Path("/Users/phoebeeeee/ongoing/LLM_AED/new_processing/llama_70b_generation_raw.jsonl").resolve()): "llama70b",
+    str(Path("/Users/phoebeeeee/ongoing/LLM_AED/new_processing/qwen_7b_generation_raw.jsonl").resolve()): "qwen7b",
+    str(Path("/Users/phoebeeeee/ongoing/LLM_AED/new_processing/qwen_72b_generation_raw.jsonl").resolve()): "qwen72b",
 }
 
 def read_jsonl(path):
