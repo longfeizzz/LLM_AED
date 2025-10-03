@@ -9,8 +9,8 @@ MODEL="${1:-llama_8b}"
 COMPARE_PY="/Users/phoebeeeee/ongoing/LLM_AED/src/kld_jsd.py"
 PLOT_PY="/Users/phoebeeeee/ongoing/LLM_AED/src/plot.py"
 
-BASE_DIR="/Users/phoebeeeee/ongoing/LLM_AED/new_processing/validation_result/original"
-MODEL_DIR="${BASE_DIR}/${MODEL}_original"
+BASE_DIR="/Users/phoebeeeee/ongoing/LLM_AED/new_processing/validation_result/all_llm"
+MODEL_DIR="${BASE_DIR}/${MODEL}_all_peer/threshold"
 OUT_DIR="${MODEL_DIR}/kld_jsd"
 mkdir -p "$OUT_DIR"
 
@@ -30,7 +30,7 @@ for thr in $(seq 0.1 0.1 0.9); do
   python "$COMPARE_PY" \
     --model_jsonl "$MODEL_JSONL" \
     --out_dir "$OUT_DIR" \
-    --prefix "${MODEL}_original_before_${thr}" \
+    --prefix "${MODEL}_peer_before_${thr}" \
     --round_idx 1
 
   # round 2 = after
@@ -38,7 +38,7 @@ for thr in $(seq 0.1 0.1 0.9); do
   python "$COMPARE_PY" \
     --model_jsonl "$MODEL_JSONL" \
     --out_dir "$OUT_DIR" \
-    --prefix "${MODEL}_original_after_${thr}" \
+    --prefix "${MODEL}_peer_after_${thr}" \
     --round_idx 2
 done
 
