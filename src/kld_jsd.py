@@ -72,16 +72,33 @@ def load_model_counts(model_jsonl, round_idx): # 1 or 2
     return dist_map
 
 
-def load_human_counts_chaos(chaos_jsonl):
-    with open(chaos_jsonl, "r") as f:
-        records = [json.loads(line) for line in f]
+# def load_human_counts_chaos(chaos_jsonl):
+#     with open(chaos_jsonl, "r") as f:
+#         records = [json.loads(line) for line in f]
 
-    dist_map = {}
-    for r in records:
-        uid = r["uid"]
-        counter = r["label_counter"]
-        dist_map[uid] = {k: v for k, v in counter.items()}
+#     dist_map = {}
+#     for r in records:
+#         uid = r["uid"]
+#         counter = r["label_counter"]
+#         dist_map[uid] = {k: v for k, v in counter.items()}
     
+#     return dist_map
+
+def load_human_counts_chaos(chaos_jsonl):
+    dist_map = {}
+    with open(chaos_jsonl, "r", encoding="utf-8") as f:
+        for line in f:
+            if not line.strip():
+                continue
+            r = json.loads(line)
+            uid = r.get("id")
+            chaos_counts = r.get("chaosnli_labels", {})
+            counter = {
+                "e": float(chaos_counts.get("e", 0) or 0),
+                "n": float(chaos_counts.get("n", 0) or 0),
+                "c": float(chaos_counts.get("c", 0) or 0)
+            }
+            dist_map[uid] = counter
     return dist_map
 
 
@@ -107,7 +124,7 @@ def load_human_counts_varierr(varierr_json, round_idx):
 def compare_distributions(model_counts, human_counts, out_csv, title=""):
     rows = []
     shared_ids = set(model_counts.keys()) & set(human_counts.keys())
-    # print(f"[Info] {title} shared IDs: {len(shared_ids)}")
+    print(f"[Info] {title} shared IDs: {len(shared_ids)}")
 
     for uid in shared_ids:
         model_vec = [model_counts[uid].get(lbl, 0) for lbl in LABEL_ORDER]
@@ -157,7 +174,7 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--model_jsonl", required=True)
     ap.add_argument("--varierr_json", default="/Users/phoebeeeee/ongoing/LLM_AED/dataset/varierr/varierr.json")
-    ap.add_argument("--chaos_jsonl", default="/Users/phoebeeeee/ongoing/LLM_AED/dataset/chaosNLI_mnli_m.jsonl")
+    ap.add_argument("--chaos_jsonl", default="/Users/phoebeeeee/ongoing/LLM_AED/dataset/varierr/varierr.json")
     ap.add_argument("--out_dir", required=True)
     ap.add_argument("--prefix", default="model")
     ap.add_argument("--round_idx", type=int, default=2)
@@ -171,7 +188,9 @@ def main():
 
     # 2) JSD/KL - ChaosNLI
     model_counts = load_model_counts(args.model_jsonl, round_idx=args.round_idx)
+    print(f"[Info] Model counts loaded: {len(model_counts)} instances.")
     chaos_counts = load_human_counts_chaos(args.chaos_jsonl)
+    print(f"[Info] ChaosNLI counts loaded: {len(chaos_counts)} instances.")
     chaos_csv = os.path.join(args.out_dir, f"{args.prefix}_chaos_jsd_kl.csv")
     compare_distributions(model_counts, chaos_counts, chaos_csv, title="ChaosNLI")
 

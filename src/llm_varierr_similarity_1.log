@@ -1,0 +1,52 @@
+2025-10-05 01:41:46,419 | Processing file: with_validation_0.2_all_llm_7b.jsonl with 500 records
+2025-10-05 01:42:24,885 | Processing file: with_validation_0.2_all_llm_7b.jsonl with 500 records
+2025-10-05 01:45:15,078 | === Global Average Results ===
+2025-10-05 01:45:15,079 | Lexical 1-gram: 0.199
+2025-10-05 01:45:15,079 | Lexical 2-gram: 0.048
+2025-10-05 01:45:15,079 | Lexical 3-gram: 0.014
+2025-10-05 01:45:15,079 | Syntactic 1-gram: 0.716
+2025-10-05 01:45:15,079 | Syntactic 2-gram: 0.288
+2025-10-05 01:45:15,080 | Syntactic 3-gram: 0.095
+2025-10-05 01:45:15,080 | Semantic cosine similarity: 0.470
+2025-10-05 01:45:15,080 | Semantic euclidean similarity: 0.502
+2025-10-05 01:45:15,080 | Processing file: with_validation_0.2_all_llm_8b.jsonl with 500 records
+2025-10-05 01:54:46,526 | === Global Average Results ===
+2025-10-05 01:54:46,528 | Lexical 1-gram: 0.233
+2025-10-05 01:54:46,528 | Lexical 2-gram: 0.060
+2025-10-05 01:54:46,528 | Lexical 3-gram: 0.018
+2025-10-05 01:54:46,529 | Syntactic 1-gram: 0.745
+2025-10-05 01:54:46,529 | Syntactic 2-gram: 0.309
+2025-10-05 01:54:46,529 | Syntactic 3-gram: 0.116
+2025-10-05 01:54:46,529 | Semantic cosine similarity: 0.453
+2025-10-05 01:54:46,530 | Semantic euclidean similarity: 0.498
+2025-10-05 01:54:46,530 | Processing file: with_validation_0.2_one_llm_7b.jsonl with 500 records
+2025-10-05 02:00:03,184 | === Global Average Results ===
+2025-10-05 02:00:03,186 | Lexical 1-gram: 0.206
+2025-10-05 02:00:03,186 | Lexical 2-gram: 0.052
+2025-10-05 02:00:03,186 | Lexical 3-gram: 0.015
+2025-10-05 02:00:03,186 | Syntactic 1-gram: 0.725
+2025-10-05 02:00:03,186 | Syntactic 2-gram: 0.293
+2025-10-05 02:00:03,186 | Syntactic 3-gram: 0.100
+2025-10-05 02:00:03,186 | Semantic cosine similarity: 0.469
+2025-10-05 02:00:03,187 | Semantic euclidean similarity: 0.502
+2025-10-05 02:00:03,187 | Processing file: with_validation_0.2_one_llm_8b.jsonl with 500 records
+2025-10-05 02:09:36,850 | === Global Average Results ===
+2025-10-05 02:09:36,852 | Lexical 1-gram: 0.233
+2025-10-05 02:09:36,852 | Lexical 2-gram: 0.061
+2025-10-05 02:09:36,852 | Lexical 3-gram: 0.019
+2025-10-05 02:09:36,853 | Syntactic 1-gram: 0.742
+2025-10-05 02:09:36,853 | Syntactic 2-gram: 0.310
+2025-10-05 02:09:36,853 | Syntactic 3-gram: 0.117
+2025-10-05 02:09:36,854 | Semantic cosine similarity: 0.453
+2025-10-05 02:09:36,854 | Semantic euclidean similarity: 0.498
+2025-10-05 02:09:36,854 | Processing file: with_validation_0.6_all_llm_70b.jsonl with 500 records
+2025-10-05 02:15:19,105 | === Global Average Results ===
+2025-10-05 02:15:19,107 | Lexical 1-gram: 0.263
+2025-10-05 02:15:19,107 | Lexical 2-gram: 0.083
+2025-10-05 02:15:19,107 | Lexical 3-gram: 0.030
+2025-10-05 02:15:19,107 | Syntactic 1-gram: 0.753
+2025-10-05 02:15:19,108 | Syntactic 2-gram: 0.326
+2025-10-05 02:15:19,108 | Syntactic 3-gram: 0.132
+2025-10-05 02:15:19,108 | Semantic cosine similarity: 0.523
+2025-10-05 02:15:19,108 | Semantic euclidean similarity: 0.517
+2025-10-05 02:15:19,108 | Processing file: with_validation_0.6_one_llm_70b.jsonl with 500 records

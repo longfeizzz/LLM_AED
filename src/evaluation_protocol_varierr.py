@@ -51,7 +51,7 @@ def get_ground_truth(instances):
         for label, count in round1.items():
             if count is None:
                 continue
-            label_id = f"{id_}-{label[0]}"
+            label_id = f"{id_}_{label[0]}"
             id_to_gt[label_id] = label in errors
     return id_to_gt
 
@@ -66,6 +66,7 @@ def build_score_table(varierr_path, score_path):
 
     id_to_gt = get_ground_truth(data)
     id_to_score = {k: v for k, v in id_to_score.items() if k in id_to_gt}
+    # id_to_score = {k: -float(v) for k, v in id_to_score.items() if k in id_to_gt}
     metrics = compute_metrics(id_to_score, id_to_gt)
 
     df = pd.DataFrame([metrics], index=[score_path.stem])
@@ -73,7 +74,7 @@ def build_score_table(varierr_path, score_path):
 
 def main():
     parser = argparse.ArgumentParser(description="Evaluate LLM error detection using AP, P@100, and R@100.")
-    parser.add_argument("--varierr", required=True, type=Path, help="Path to varierr.json")
+    parser.add_argument("--varierr", type=Path, default = "/Users/phoebeeeee/ongoing/LLM_AED/dataset/varierr/varierr.json")
     parser.add_argument("--score", required=True, type=Path, help="Path to score file (JSON)")
 
     args = parser.parse_args()

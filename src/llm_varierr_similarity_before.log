@@ -1,0 +1,40 @@
+2025-10-05 12:34:08,829 | Processing file: llama_70b_generation_raw.jsonl with 500 records
+2025-10-05 12:39:57,310 | === Global Average Results ===
+2025-10-05 12:39:57,311 | Lexical 1-gram: 0.257
+2025-10-05 12:39:57,311 | Lexical 2-gram: 0.079
+2025-10-05 12:39:57,311 | Lexical 3-gram: 0.028
+2025-10-05 12:39:57,311 | Syntactic 1-gram: 0.754
+2025-10-05 12:39:57,311 | Syntactic 2-gram: 0.322
+2025-10-05 12:39:57,312 | Syntactic 3-gram: 0.129
+2025-10-05 12:39:57,312 | Semantic cosine similarity: 0.515
+2025-10-05 12:39:57,312 | Semantic euclidean similarity: 0.514
+2025-10-05 12:39:57,312 | Processing file: llama_8b_generation_raw.jsonl with 500 records
+2025-10-05 12:50:59,232 | === Global Average Results ===
+2025-10-05 12:50:59,234 | Lexical 1-gram: 0.233
+2025-10-05 12:50:59,234 | Lexical 2-gram: 0.062
+2025-10-05 12:50:59,234 | Lexical 3-gram: 0.020
+2025-10-05 12:50:59,235 | Syntactic 1-gram: 0.742
+2025-10-05 12:50:59,235 | Syntactic 2-gram: 0.308
+2025-10-05 12:50:59,235 | Syntactic 3-gram: 0.116
+2025-10-05 12:50:59,235 | Semantic cosine similarity: 0.450
+2025-10-05 12:50:59,236 | Semantic euclidean similarity: 0.497
+2025-10-05 12:50:59,236 | Processing file: qwen_72b_generation_raw.jsonl with 500 records
+2025-10-05 12:57:12,532 | === Global Average Results ===
+2025-10-05 12:57:12,534 | Lexical 1-gram: 0.245
+2025-10-05 12:57:12,535 | Lexical 2-gram: 0.072
+2025-10-05 12:57:12,535 | Lexical 3-gram: 0.023
+2025-10-05 12:57:12,535 | Syntactic 1-gram: 0.749
+2025-10-05 12:57:12,535 | Syntactic 2-gram: 0.323
+2025-10-05 12:57:12,535 | Syntactic 3-gram: 0.125
+2025-10-05 12:57:12,535 | Semantic cosine similarity: 0.502
+2025-10-05 12:57:12,536 | Semantic euclidean similarity: 0.511
+2025-10-05 12:57:12,536 | Processing file: qwen_7b_generation_raw.jsonl with 500 records
+2025-10-05 13:03:15,905 | === Global Average Results ===
+2025-10-05 13:03:15,906 | Lexical 1-gram: 0.207
+2025-10-05 13:03:15,907 | Lexical 2-gram: 0.052
+2025-10-05 13:03:15,907 | Lexical 3-gram: 0.015
+2025-10-05 13:03:15,907 | Syntactic 1-gram: 0.727
+2025-10-05 13:03:15,907 | Syntactic 2-gram: 0.293
+2025-10-05 13:03:15,908 | Syntactic 3-gram: 0.101
+2025-10-05 13:03:15,908 | Semantic cosine similarity: 0.469
+2025-10-05 13:03:15,908 | Semantic euclidean similarity: 0.502

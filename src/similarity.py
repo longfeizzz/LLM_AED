@@ -10,20 +10,23 @@ from scipy.spatial.distance import cosine, euclidean
 ROOT_FILE = "/Users/phoebeeeee/ongoing/LLM_AED/dataset/varierr/varierr.json"
 N_GRAMS = [1, 2, 3]
 
-# ----------------------------
-# Lexical diversity helpers
-# ----------------------------
-def tokenize(s: str):
-    # return s.lower().split()
-    return tok.tokenize(s.lower())
+nlp = spacy.load("en_core_web_md")
+
+def spacy_tokens(text):
+    doc = nlp(text)
+    return [t.text.lower() for t in doc if not t.is_punct and not t.is_space]
+
+def spacy_pos(text):
+    doc = nlp(text)
+    return [t.pos_ for t in doc]
 
 def get_ngram_counts(tokens, n):
     if len(tokens) < n:
         return Counter()
     return Counter(tuple(tokens[i:i+n]) for i in range(len(tokens)-n+1))
 
-def occurrence_diversity(tokens_a, tokens_b, n: int) -> float:
-    ca, cb = get_ngram_counts(tokens_a, n), get_ngram_counts(tokens_b, n)
+# def occurrence_diversity(tokens_a, tokens_b, n: int) -> float:
+#     ca, cb = get_ngram_counts(tokens_a, n), get_ngram_counts(tokens_b, n)
     # all_keys = set(ca) | set(cb)
     # nonmatch, total = 0, 0
     # for k in all_keys:
@@ -32,6 +35,7 @@ def occurrence_diversity(tokens_a, tokens_b, n: int) -> float:
     #     nonmatch += abs(na - nb)
     # return nonmatch / total if total > 0 else 0.0
 
+def overlap_ratio(ca, cb):
     count_1_in_2 = sum([1 if b in ca else 0 for b in cb])
     count_2_in_1 = sum([1 if a in cb else 0 for a in ca])
     combined_length = len(ca) + len(cb)
@@ -39,49 +43,15 @@ def occurrence_diversity(tokens_a, tokens_b, n: int) -> float:
         (count_1_in_2 + count_2_in_1) / combined_length if combined_length > 0 else float("nan")
     )
 
+def lexical_diversity(a_text, b_text, n):
+    ca = get_ngram_counts(spacy_tokens(a_text), n)
+    cb = get_ngram_counts(spacy_tokens(b_text), n)
+    return overlap_ratio(ca, cb)
 
-# ----------------------------
-# Syntactic diversity (POS with spaCy)
-# ----------------------------
-nlp = spacy.load("en_core_web_sm")
-
-def get_pos_counts(text, n):
-    pos_tags = [tok.pos_ for tok in nlp(text)]
-    if len(pos_tags) < n:
-        return Counter()
-    return Counter(tuple(pos_tags[i:i+n]) for i in range(len(pos_tags)-n+1))
-
-def syntactic_diversity(a, b, n):
-    ca, cb = get_pos_counts(a, n), get_pos_counts(b, n)
-    count_1_in_2 = sum([1 if b in ca else 0 for b in cb])
-    count_2_in_1 = sum([1 if a in cb else 0 for a in ca])
-    combined_length = len(ca) + len(cb)
-    return (
-        (count_1_in_2 + count_2_in_1) / combined_length if combined_length > 0 else float("nan")
-    )
-
-# ----------------------------
-# Semantic similarity (MiniLM embeddings)
-# ----------------------------
-device = "cuda" if torch.cuda.is_available() else "cpu"
-tok = AutoTokenizer.from_pretrained("sentence-transformers/all-MiniLM-L6-v2")
-model = AutoModel.from_pretrained("sentence-transformers/all-MiniLM-L6-v2").to(device).eval()
-
-def sentence_embedding(text):
-    encoded = tok([text], padding=True, truncation=True, return_tensors="pt").to(device)
-    with torch.no_grad():
-        out = model(**encoded, output_hidden_states=True)
-    token_embeddings = out.hidden_states[-1]
-    attn_mask = encoded["attention_mask"].unsqueeze(-1).expand(token_embeddings.size()).float()
-    emb = torch.sum(token_embeddings * attn_mask, 1) / torch.clamp(attn_mask.sum(1), min=1e-9)
-    return F.normalize(emb, p=2, dim=1).cpu().numpy()[0]
-
-def cosine_similarity(e1, e2):
-    return float(np.dot(e1, e2))  
-    # return -cosine(e1, e2) + 1
-
-def euclidean_similarity(e1, e2):
-    return 1.0 / (1.0 + np.linalg.norm(e1 - e2))
+def syntactic_diversity(a_text, b_text, n):
+    ca = get_ngram_counts(spacy_pos(a_text), n)
+    cb = get_ngram_counts(spacy_pos(b_text), n)
+    return overlap_ratio(ca, cb)
 
 def load_records(path):
     records = []
@@ -103,6 +73,27 @@ def extract_reasons(rec: dict, key: str):
             reasons.append(item.strip())
     return reasons
 
+device = "cuda" if torch.cuda.is_available() else "cpu"
+tok = AutoTokenizer.from_pretrained("sentence-transformers/all-distilroberta-v1")
+model = AutoModel.from_pretrained("sentence-transformers/all-distilroberta-v1").to(device).eval()
+
+def sentence_embedding(text):
+    encoded = tok([text], padding=True, truncation=True, return_tensors="pt").to(device)
+    with torch.no_grad():
+        out = model(**encoded, output_hidden_states=True)
+    token_embeddings = out.hidden_states[-1]
+    attn_mask = encoded["attention_mask"].unsqueeze(-1).expand(token_embeddings.size()).float()
+    emb = torch.sum(token_embeddings * attn_mask, 1) / torch.clamp(attn_mask.sum(1), min=1e-9)
+    return F.normalize(emb, p=2, dim=1).cpu().numpy()[0]
+
+def cosine_similarity(e1, e2):
+    return float(np.dot(e1, e2))  
+    # return -cosine(e1, e2) + 1
+
+def euclidean_similarity(e1, e2):
+    return 1.0 / (1.0 + np.linalg.norm(e1 - e2))
+
+
 
 def main():
     records = load_records(ROOT_FILE)
@@ -121,14 +112,14 @@ def main():
             if len(reasons) < 2:
                 continue
 
-            token_lists = [tokenize(r) for r in reasons]
+            # token_lists = [spacy_tokens(r) for r in reasons]
             embeds = [sentence_embedding(r) for r in reasons]
 
             for i, j in itertools.combinations(range(len(reasons)), 2):
                 # lexical
                 for n in N_GRAMS:
                     totals["lexical"][n].append(
-                        occurrence_diversity(token_lists[i], token_lists[j], n)
+                        lexical_diversity(reasons[i], reasons[j], n)
                     )
                 # syntactic
                 for n in N_GRAMS:
