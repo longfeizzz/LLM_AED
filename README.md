@@ -15,18 +15,17 @@
 - `generation/`: LLM-generated explanations, along with intermediate preprocessing outputs.
 
 
-## Run Experiments
 
-### 1. Install dependencies:
+## Install dependencies:
 
 ```bash
 pip install -r requirements.txt
 ```
 
 
-### 2. Explanation Generation
+## Explanation Generation
 
-#### Using Qwen Models:
+### Using Qwen Models:
 
 ```bash
 cd generation
@@ -37,7 +36,7 @@ CUDA_VISIBLE_DEVICES=0 python generate_explanation_qwen.py \
     [--output_dir ]
  ```
 
-#### Using Llama Models
+### Using Llama Models
 
 ```bash
 cd generation
@@ -47,30 +46,51 @@ CUDA_VISIBLE_DEVICES=0 python generate_explanation_llama.py \
     --jsonl_path  \
     [--output_dir ]
 ```
-* `--model_name`: Model name
-* `--jsonl_path`: Path to input JSONL file (default: `.../dataset/varierr.json`)
-* `--output_dir`: Output directory. Auto-generated from model name if not specified (default: `../generation/<model_name>_raw`)
+- `--model_name`: Model name
+- `--jsonl_path`: Path to input JSONL file (default: `.../dataset/varierr.json`)
+- `--output_dir`: Output directory. Auto-generated from model name if not specified (default: `../generation/<model_name>_generation_raw`)
 
-#### Output Format
+### Output Format
 
 For each instance in VariErr, three files are generated under `<output_dir>/<sample_id>/`:
-- `E` — explanations for why the statement is **true**
-- `N` — explanations for why the statement is **neutral**
-- `C` — explanations for why the statement is **false**
+- `E_0.txt` — explanations for why the statement is **true**
+- `N_0.txt` — explanations for why the statement is **neutral**
+- `C_0.txt` — explanations for why the statement is **false**
 
-### 3. Deduplication
-- `notebooks/deduplication.ipynb`: Notebook for the three step deduplication process.
+## Preprocessing
 
-### 4. Explanation Validation
+**Manual Cleaning**: We manually inspecte all generated outputs and filtered out low-quality generations, including incomplete outputs, fallback responses, and non-English explanations. \
+For each sample, we create cleaned files named `E`, `N`, and `C` under the same directory (if no changes were made, the original file is copied as-is).
 
-#### GPT-4.1 (via API)
+**Merging**: We then merge all cleaned generations per model into individual JSONL files, and further combine all models into a single file for the *all-llm* prompting scenario.
+
+```bash
+cd processing
+
+python processing.py \
+    --generation_dir ../generation \
+    --input_jsonl ../dataset/varierr/varierr.json \
+    --processing_dir ../new_processing \
+    --all_dir generation_all.jsonl
+```
+
+- `--generation_dir`: Directory containing `<model>_generation_raw` folders (default: `../generation`)
+- `--input_jsonl`: Original dataset JSONL file (default: `../dataset/varierr/varierr.json`)
+- `--processing_dir`: Directory to save per-model JSONL files (default: `../processing`)
+- `--all_dir`: Final merged output filename (default: `generation_all.jsonl`)
+
+
+
+## Explanation Validation
+
+### GPT-4.1 (via API)
 
 ```bash
 export OPENAI_API_KEY=your-api-key 
 python src/llm_validation_gpt.py gpt-4.1
  ```
 
-#### Llama model
+### Llama model
 
 ```bash
 python src/llm_validation_llama.py
