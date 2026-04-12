@@ -1,15 +1,6 @@
 # EVADE: LLM-Based Explanation Generation and Validation for Error Detection in NLI
 
 
-## Abstract
-
-
-High-quality labeled datasets are essential for Natural Language Processing (NLP) research, but ensuring data quality remains a major challenge. Human Label Variation (HLV) is prevalent in tasks such as Natural Language Inference (NLI), where multiple labels may be valid for the same instance. This inherent ambiguity makes it even more difficult to distinguish annotation errors from plausible variations . In this thesis, we propose a framework that leverages large language models (LLMs) to detect annotation errors through explanation-based validation. Specifically, the LLM first generates diverse, label-specific explanations for each instance and then validate them by assigning a validity score to each explanation. If none of the explanations under a given label are validated,
-the label is considered erroneous.
-
-We perform a comprehensive analysis comparing human and LLM explanations across
-distribution, validation results, and impact on model learning. Our experiments show that LLM-generated explanations align well with human annotations in terms of label distributiong and removing LLM-detected errors from the training data leads to improved performance on downstream tasks. These demonstrate that LLMs can detect annotation errors and offer complementary insights to human annotators, highlighting the potential of explanation-based pipelines to scale validation with minimal human effort, offering a practical approach to improving dataset quality in the presence of label variation.
-
 ## Repository Structure
 
 
@@ -35,18 +26,37 @@ pip install -r requirements.txt
 
 ### 2. Explanation Generation
 
-#### Using GPT-4.1 (via OpenAI API):
+#### Using Qwen Models:
 
 ```bash
-export OPENAI_API_KEY=your-api-key 
-python src/generate_explanation_gpt.py
+cd generation
+
+CUDA_VISIBLE_DEVICES=0 python generate_explanation_qwen.py \
+    --model_name  \
+    --jsonl_path  \
+    [--output_dir ]
  ```
 
-#### Using Llama models
+#### Using Llama Models
 
 ```bash
-python src/generate_explanation_llama.py
- ```
+cd generation
+
+CUDA_VISIBLE_DEVICES=0 python generate_explanation_llama.py \
+    --model_name  \
+    --jsonl_path  \
+    [--output_dir ]
+```
+* `--model_name`: Model name
+* `--jsonl_path`: Path to input JSONL file (default: `.../dataset/varierr.json`)
+* `--output_dir`: Output directory. Auto-generated from model name if not specified (default: `../generation/<model_name>_raw`)
+
+#### Output Format
+
+For each instance in VariErr, three files are generated under `<output_dir>/<sample_id>/`:
+- `E` — explanations for why the statement is **true**
+- `N` — explanations for why the statement is **neutral**
+- `C` — explanations for why the statement is **false**
 
 ### 3. Deduplication
 - `notebooks/deduplication.ipynb`: Notebook for the three step deduplication process.
