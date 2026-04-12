@@ -1,3 +1,0 @@
-1. Julius could be asking the question because he does not know the answer.
-2. Julius could be asking the question rhetorically despite already knowing the answer.
-3. The context does not specify Julius’s knowledge state before asking.

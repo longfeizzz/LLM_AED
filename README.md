@@ -1,6 +1,4 @@
-# Beyond Noise: Detecting Annotation Error from Human Label Variation using LLMs
-
-This repository contains the code and resources for the master’s thesis “Beyond Noise: Detecting Annotation Error from Human Label Variation using LLMs” by Longfei Zuo, carried out at the MaiNLP group, CIS, LMU Munich.
+# EVADE: LLM-Based Explanation Generation and Validation for Error Detection in NLI
 
 
 ## Abstract
