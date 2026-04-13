@@ -132,6 +132,14 @@ python validation/all_llm.py \
 - `--input_path`: Path to input JSONL file (default: `../processing/generation_all.jsonl`)
 - `--output_dir`: Output directory. Auto-generated from model name if not specified (default: `../validation/validation_results/all_llm/<model_name>/scores.json`)
 
+
+Run all three modes for LLaMA or Qwen models using the provided bash scripts:
+
+```bash
+bash run_llama_all.sh 
+bash run_qwen_all.sh 
+``` 
+
 ### Validation Output Format
 
 All three validation scripts save their results as:
