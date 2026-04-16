@@ -171,7 +171,26 @@ For *all-llm* prompts, the source model is also included in the key:
 
 
 
+## Thresholding
+
+Apply validation tags to generated explanations across a range of thresholds (0.0–1.0) to support further analysis.
+
+```bash
+bash evaluation/run_threshold.sh
+```
+
 ## Evaluation
+
+### Distribution Comparison
+
+We wanto to compare the validated label distribution's alignment with ChaosNLI and VariErr Distribution before and after validation, with different thresholds, ChaosNLI contains 100 annotations per instance.
+
+We also generate _
+
+
+```bash
+bash evaluation/run_kld_jsd.sh
+``` 
 
 ### Distributional Alignment
 - `notebooks/distribution_comparison.ipynb`: KLD and JSD between model and human distributions from VariErr or ChaosNLI.
