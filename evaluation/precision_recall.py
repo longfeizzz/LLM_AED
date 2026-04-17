@@ -1,4 +1,5 @@
 import os
+import sys
 import pandas as pd
 from ast import literal_eval
 import re
@@ -11,9 +12,9 @@ def evaluate_file(csv_path):
         llm = set(literal_eval(row["llm_validated"]))
         varierr = set(literal_eval(row["varierr_validated"]))
 
-        TP += len(llm & varierr)       # 预测对的
-        FP += len(llm - varierr)       # 多预测的
-        FN += len(varierr - llm)       # 漏掉的
+        TP += len(llm & varierr)     
+        FP += len(llm - varierr)     
+        FN += len(varierr - llm)   
 
     precision = TP / (TP + FP) if TP + FP > 0 else 0.0
     recall = TP / (TP + FN) if TP + FN > 0 else 0.0
@@ -37,7 +38,6 @@ def evaluate_folder(folder, out_csv="results_summary.csv"):
         metrics["threshold"] = threshold 
         results.append(metrics)
 
-    # 保存结果
     df_results = pd.DataFrame(results)
     out_path = os.path.join(folder, out_csv)
     df_results.to_csv(out_path, index=False)
@@ -45,6 +45,15 @@ def evaluate_folder(folder, out_csv="results_summary.csv"):
     return df_results
 
 if __name__ == "__main__":
-    folder = "/Users/phoebeeeee/ongoing/LLM_AED/new_processing/validation_result/one_llm/qwen_72b_all/validated_overlap_2"  # 修改成你的文件夹路径
+    if len(sys.argv) < 2:
+        print("Usage: python evaluate.py <folder_path>")
+        sys.exit(1)
+    
+    folder = sys.argv[1]
+    
+    if not os.path.isdir(folder):
+        print(f"Error: {folder} is not a valid directory")
+        sys.exit(1)
+    
     df = evaluate_folder(folder) 
     print(df)
