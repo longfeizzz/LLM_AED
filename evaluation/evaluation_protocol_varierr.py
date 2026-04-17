@@ -74,7 +74,7 @@ def build_score_table(varierr_path, score_path):
 
 def main():
     parser = argparse.ArgumentParser(description="Evaluate LLM error detection using AP, P@100, and R@100.")
-    parser.add_argument("--varierr", type=Path, default = "/Users/phoebeeeee/ongoing/LLM_AED/dataset/varierr/varierr.json")
+    parser.add_argument("--varierr", type=Path, default = "../dataset/varierr.json")
     parser.add_argument("--score", required=True, type=Path, help="Path to score file (JSON)")
 
     args = parser.parse_args()

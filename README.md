@@ -198,16 +198,15 @@ bash evaluate_all.sh
 
 Results are saved under `evaluation/<mode>/<model>/validated_overlap/results_summary.csv`
 
-### Ranking Alignment
-- `notebooks/generate_ranking.ipynb`: Ranking based comparison between model and human distributions from VariErr or ChaosNLI.
+### AED
 
-
-### Evaluation Protocol from [VariErr](https://aclanthology.org/2024.acl-long.123.pdf).
+Report average precision (AP), as well as precision and recall at the top 100 predictions (P@100 and R@100).
 
 ```bash
-python src/evaluation_protocol_varierr.py
- ```
-- Report average precision (AP), as well as precision and recall at the top 100 predictions (P@100 and R@100).
+bash ./run_eval.sh
+```
+Results are saved under 
+
 
 
 
