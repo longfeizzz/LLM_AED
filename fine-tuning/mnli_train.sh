@@ -6,7 +6,7 @@ python run.py \
   --do_train \
   --do_eval \
   --max_seq_length 128 \
-  --per_device_train_batch_size 16 a\
+  --per_device_train_batch_size 16 \
   --learning_rate 2e-5 \
   --num_train_epochs 3 \
   --adam_beta1 0.9 \
