@@ -4,21 +4,6 @@ import argparse
 from transformers import AutoModelForCausalLM, AutoTokenizer
 from tqdm import tqdm
 
-os.environ['CUDA_VISIBLE_DEVICES'] = '0,1'
-# os.environ["TRANSFORMERS_OFFLINE"] = "1"
-# os.environ["HF_HUB_CACHE"] = "/mounts/data/proj/zlongfei/.cache"
-
-# model_id = "meta-llama/Llama-3.1-8B-Instruct"
-model_name = "Qwen/Qwen2.5-72B-Instruct"
-
-model = AutoModelForCausalLM.from_pretrained(
-    model_name,
-    torch_dtype="auto",
-    device_map="auto"
-)
-
-tokenizer = AutoTokenizer.from_pretrained(model_name)
-
 def build_chat_messages(premise, hypothesis, relationship):
     sys_msg = {
         "role": "system",
@@ -58,7 +43,7 @@ def generate_response(model, tokenizer, messages):
     return response.strip()
 
 def process_jsonl(model, tokenizer, jsonl_path, output_dir):
-    relationships = {"E": "true", "N": "undetermined", "C": "false"}
+    relationships = {"E_0.txt": "true", "N_0.txt": "undetermined", "C_0.txt": "false"}
 
     with open(jsonl_path, "r", encoding="utf-8") as f:
         lines = f.readlines()

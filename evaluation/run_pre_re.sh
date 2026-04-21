@@ -1,7 +1,10 @@
 #!/bin/bash
 
-BASE_DIR="/LLM_AED/evaluation"
-SCRIPT_PATH="/evaluation/precision_recall.py"
+set -euo pipefail
+
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+BASE_DIR="$SCRIPT_DIR"
+SCRIPT_PATH="$SCRIPT_DIR/precision_recall.py"
 
 # Loop through all modes (all-llm, one-llm, etc.)
 for mode_dir in "$BASE_DIR"/*; do

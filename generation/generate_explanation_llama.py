@@ -29,7 +29,7 @@ def generate_response(pipe, messages):
     return assistant_answer.strip()
 
 def process_jsonl(pipe, jsonl_path, output_dir):
-    relationships = {"E": "true", "N": "undetermined", "C": "false"}
+    relationships = {"E_0.txt": "true", "N_0.txt": "undetermined", "C_0.txt": "false"}
 
     with open(jsonl_path, "r", encoding="utf-8") as f:
         lines = f.readlines()
@@ -58,17 +58,17 @@ if __name__ == "__main__":
     args = parse_args()
 
     if args.output_dir is None:
-        model_id = args.model_id.split("/")[-1].replace("-Instruct", "")
-        output_dir = f"../generation/{model_id}_generation_raw"
+        model_short = args.model_name.split("/")[-1].replace("-Instruct", "")
+        output_dir = f"../generation/{model_short}_generation_raw"
     else:
         output_dir = args.output_dir
 
-    print(f"Model: {args.model_id}")
+    print(f"Model: {args.model_name}")
     print(f"Output dir: {output_dir}")
 
     pipe = pipeline(
         "text-generation",
-        model=args.model_id,
+        model=args.model_name,
         torch_dtype=torch.bfloat16,
         device_map="auto"
     )

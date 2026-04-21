@@ -108,7 +108,7 @@ def merge_jsonls(jsonl_files: list[Path], output_path: Path):
 def parse_args():
     parser = argparse.ArgumentParser()
     parser.add_argument("--generation_dir", type=str, default="../generation")
-    parser.add_argument("--input_jsonl", type=str, default="../dataset/varierr/varierr.json")
+    parser.add_argument("--input_jsonl", type=str, default="../dataset/varierr.json")
     parser.add_argument("--processing_dir", type=str, default="../processing")
     parser.add_argument("--all_dir", type=str, default="../processing/generation_all.jsonl")
     return parser.parse_args()
