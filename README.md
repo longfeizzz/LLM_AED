@@ -1,154 +1,180 @@
 # EVADE: LLM-Based Explanation Generation and Validation for Error Detection in NLI
 
+## Notes Before Running
+
+All commands below are written to be run from the repository root:
+
+```bash
+cd /Users/phoebeeeee/ongoing/LLM_AED
+```
+
+Several scripts in this repo use relative paths such as `../processing/...` and `../validation/...`. Those defaults only make sense if the script is launched from its own subdirectory, so this README uses explicit repo-root-relative paths to make the commands runnable from the root directory.
 
 ## Repository Structure
 
+- `generation/`: explanation generation scripts and generated explanation folders.
+- `processing/`: preprocessing script plus merged JSONL files.
+- `validation/`: validation scripts, batch runner scripts, and validation outputs.
+- `evaluation/`: thresholding and evaluation scripts plus saved evaluation results.
+- `dataset/`: datasets used in the project.
+- `fine-tuning/`: downstream fine-tuning shell scripts.
+- `notebooks/`: notebooks for data preparation and analysis.
+- `src/`: plotting and analysis scripts used during the project.
 
-- `src/`: Complete source code used to reproduce all experiments and results presented in the thesis.
-
-- `scripts/`: Python and shell scripts for data preprocessing, running experiments, and evaluating results.
-
-- `dataset/`: All datasets used in this study, including processed versions of VariErr and ChaosNLI.
-
-- `results/`: Output files, including model scores and evaluation metrics, for reference and verification.
-
-- `generation/`: LLM-generated explanations, along with intermediate preprocessing outputs.
-
-
-
-## Install dependencies:
+## Install Dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
 
-
 ## Explanation Generation
 
-### Using Qwen Models:
+### Qwen Models
 
 ```bash
 CUDA_VISIBLE_DEVICES=0 python generation/generate_explanation_qwen.py \
-    --model_name  \
-    --jsonl_path  \
-    [--output_dir ]
- ```
+  --model_name Qwen/Qwen2.5-72B-Instruct \
+  --jsonl_path dataset/varierr/varierr.json \
+  --output_dir generation/qwen_72b_generation_raw
+```
 
-### Using Llama Models
+### LLaMA Models
 
 ```bash
 CUDA_VISIBLE_DEVICES=0 python generation/generate_explanation_llama.py \
-    --model_name  \
-    --jsonl_path  \
-    [--output_dir ]
+  --model_name meta-llama/Llama-3.3-70B-Instruct \
+  --jsonl_path dataset/varierr/varierr.json \
+  --output_dir generation/llama_70b_generation_raw
 ```
-- `--model_name`: Model name
-- `--jsonl_path`: Path to input JSONL file (default: `.../dataset/varierr.json`)
-- `--output_dir`: Output directory. Auto-generated from model name if not specified (default: `../generation/<model_name>_generation_raw`)
 
-### Output Format
+- `--model_name`: model name or path.
+- `--jsonl_path`: input VariErr JSONL file.
+- `--output_dir`: output folder for one model's generations.
 
-For each instance in VariErr, three files are generated under `<output_dir>/<sample_id>/`:
-- `E_0.txt` — explanations for why the statement is **true**
-- `N_0.txt` — explanations for why the statement is **neutral**
-- `C_0.txt` — explanations for why the statement is **false**
+Current script status:
+
+- `generation/generate_explanation_qwen.py` eagerly loads a default model at import time before parsing CLI arguments.
+- `generation/generate_explanation_llama.py` currently references `args.model_id` internally although the CLI argument is `--model_name`.
+
+So the output paths above are correct, but both generation scripts need code fixes before they can be reproduced reliably from this checkout.
+
+### Generation Outputs
+
+For each sample, the script writes files under:
+
+- `generation/<model>_generation_raw/<sample_id>/`
+
+The generation scripts currently write files named:
+
+- `E` or `E_0.txt`: explanations for entailment / true
+- `N` or `N_0.txt`: explanations for neutral / undetermined
+- `C` or `C_0.txt`: explanations for contradiction / false
+
+The preprocessing script reads the cleaned files named exactly `E`, `N`, and `C`. If you manually clean generations, keep the cleaned files in the same sample directory with those exact filenames.
 
 ## Preprocessing
 
-**Manual Cleaning**: We manually inspecte all generated outputs and filtered out low-quality generations, including incomplete outputs, fallback responses, and non-English explanations. \
-For each sample, we create cleaned files named `E`, `N`, and `C` under the same directory (if no changes were made, the original file is copied as-is).
+### Manual Cleaning
 
-**Merging**: We then merge all cleaned generations per model into individual JSONL files, and further combine all models into a single file for the *all-llm* prompting scenario.
+Generated outputs are manually inspected and cleaned. For each sample, keep the cleaned files as:
+
+- `generation/<model>_generation_raw/<sample_id>/E`
+- `generation/<model>_generation_raw/<sample_id>/N`
+- `generation/<model>_generation_raw/<sample_id>/C`
+
+### Merge Cleaned Explanations
 
 ```bash
 python processing/processing.py \
-    --generation_dir ../generation \
-    --input_jsonl ../dataset/varierr/varierr.json \
-    --processing_dir ../new_processing \
-    --all_dir generation_all.jsonl
+  --generation_dir generation \
+  --input_jsonl dataset/varierr/varierr.json \
+  --processing_dir processing \
+  --all_dir generation_all.jsonl
 ```
 
-- `--generation_dir`: Directory containing `<model>_generation_raw` folders (default: `../generation`)
-- `--input_jsonl`: Original dataset JSONL file (default: `../dataset/varierr/varierr.json`)
-- `--processing_dir`: Directory to save per-model JSONL files (default: `../processing`)
-- `--all_dir`: Final merged output filename (default: `generation_all.jsonl`)
+- `--generation_dir`: directory containing all `*_generation_raw` folders.
+- `--input_jsonl`: original VariErr JSONL file.
+- `--processing_dir`: directory for per-model merged JSONL files.
+- `--all_dir`: merged filename written inside `processing_dir`.
 
+### Preprocessing Outputs
 
+After this step, files are saved to:
+
+- `processing/<model>_generation_raw.jsonl`
+- `processing/generation_all.jsonl`
 
 ## Explanation Validation
 
-### *one-expl* validation
+### `one_expl`
 
-Use `validation/one_expl.py` to validate explanations one by one. Each prompt contains a single explanation, and the validation model returns one probability (0.0–1.0) for that explanation.
+Validate one explanation per prompt:
 
 ```bash
-CUDA_VISIBLE_DEVICES= \
-python validation/one_expl.py \
-    --model_name_or_path \
-    --model_type \
-    [--input_path] \
-    [--output_dir]
+CUDA_VISIBLE_DEVICES=0 python validation/one_expl.py \
+  --model_name_or_path meta-llama/Llama-3.1-8B-Instruct \
+  --model_type llama \
+  --input_path processing/llama_8b_generation_raw.jsonl \
+  --output_dir validation/validation_results/one_expl/llama_8b
 ```
 
-- `--model_name_or_path`: Model name
-- `--model_type`: `llama` or `qwen`
-- `--input_path`: Path to input JSONL file. Auto-generated from model name if not specified (default: `../processing/<model_name>_generation_raw.jsonl`)
-- `--output_dir`: Output directory. Auto-generated from model name if not specified (default: `../validation/validation_results/one_expl/<model_name>/scores.json`)
+Output:
 
-### *one-llm* validation
+- `validation/validation_results/one_expl/<model>/scores.json`
 
-Use `validation/one-llm.py` to validate all explanations generated by a single source LLM for each instance in one prompt. The validation model returns one probability (0.0–1.0) for each explanation in that batch.
+### `one_llm`
+
+Validate all explanations from one source LLM in one prompt:
 
 ```bash
-CUDA_VISIBLE_DEVICES= \
-python validation/one-llm.py \
-    --model_name_or_path \
-    --model_type \
-    [--input_path] \
-    [--output_dir]
+CUDA_VISIBLE_DEVICES=0 python validation/one_llm.py \
+  --model_name_or_path meta-llama/Llama-3.1-8B-Instruct \
+  --model_type llama \
+  --input_path processing/llama_8b_generation_raw.jsonl \
+  --output_dir validation/validation_results/one_llm/llama_8b
 ```
 
-- `--model_name_or_path`: Model name
-- `--model_type`: `llama` or `qwen`
-- `--input_path`: Path to input JSONL file. Auto-generated from model name if not specified (default: `../processing/<model_name>_generation_raw.jsonl`)
-- `--output_dir`: Output directory. Auto-generated from model name if not specified (default: `../validation/validation_results/one-llm/<model_name>/scores.json`)
+Output:
 
-### *all-llm* validation
+- `validation/validation_results/one_llm/<model>/scores.json`
 
-Use `validation/all_llm.py` to validate explanations generated by multiple source LLMs. All explanations for each instance are batched into a single prompt, and the validation model returns a probability (0.0–1.0) for each.
+### `all_llm`
 
+Validate explanations from multiple source LLMs together:
 
 ```bash
-CUDA_VISIBLE_DEVICES= 
-python validation/all_llm.py \
-    --model_name_or_path \
-    --model_type \
-    [--input_path] \
-    [--output_dir]
- ```
+CUDA_VISIBLE_DEVICES=0 python validation/all_llm.py \
+  --model_name_or_path meta-llama/Llama-3.1-8B-Instruct \
+  --model_type llama \
+  --input_path processing/generation_all.jsonl \
+  --output_dir validation/validation_results/all_llm/llama_8b
+```
 
-- `--model_name_or_path`: Model name
-- `--model_type`: `llama` or `qwen`
-- `--input_path`: Path to input JSONL file (default: `../processing/generation_all.jsonl`)
-- `--output_dir`: Output directory. Auto-generated from model name if not specified (default: `../validation/validation_results/all_llm/<model_name>/scores.json`)
+Output:
 
+- `validation/validation_results/all_llm/<model>/scores.json`
 
-Run all three modes for LLaMA or Qwen models using the provided bash scripts:
+### Run All Validation Modes
+
+The batch scripts are inside `validation/`, but they do not currently run successfully as-is in this checkout:
+
+- they expect to be launched from inside `validation/`
+- they call `one-expl.py` and `one-llm.py`, while the actual files are `one_expl.py` and `one_llm.py`
+
+So for now, run the three validation commands manually from the repository root instead of relying on:
 
 ```bash
-bash run_llama_all.sh 
-bash run_qwen_all.sh 
-``` 
+bash validation/run_llama_all.sh 0
+bash validation/run_qwen_all.sh 0
+```
 
 ### Validation Output Format
 
-All three validation scripts save their results as:
+All three validation scripts save:
 
 - `<output_dir>/scores.json`
 
-The file is a JSON object mapping each explanation ID to its validation probability.
-
-For *one_expl* and *one-llm* prompting strategies, the format is:
+For `one_expl` and `one_llm`, keys look like:
 
 ```json
 {
@@ -156,75 +182,80 @@ For *one_expl* and *one-llm* prompting strategies, the format is:
 }
 ```
 
-- Example key: `123_e-0`
-- `label_code` is one of `e`, `n`, `c`
-- `<index>` is the explanation index within `generated_explanations`
-
-For *all-llm* prompts, the source model is also included in the key:
+For `all_llm`, keys look like:
 
 ```json
 {
   "<source_model>_<sample_id>_<label_code>-<index>": 0.87
 }
 ```
+
 ## Evaluation
 
 ### Thresholding
 
-Apply validation tags to generated explanations across a range of thresholds (0.0–1.0) to support further analysis.
+Apply validation thresholds and save thresholded JSONL files:
 
 ```bash
-bash evaluation/run_threshold.sh
+cd evaluation
+bash run_val_threshold.sh
 ```
-Results are saved under 
 
+Outputs are written to:
+
+- `evaluation/<mode>/<model>/threshold/with_validation_<threshold>.jsonl`
 
 ### Distribution Comparison
 
-Compare the validated label distribution's alignment with ChaosNLI and VariErr Distribution before and after validation, with different thresholds, ChaosNLI contains 100 annotations per instance.
+Run KL / JSD comparison for one mode and one model at a time:
 
 ```bash
-bash evaluation/run_kld_jsd.sh
-``` 
-Results are saved under ``/evaluation/\<mode\>/\<model\>/kld_jsd
-
-### Overlap of validated labels
-
-Evaluate the model predictions using Precision, Recall by comparing LLM-validated labels against VariErr-validated labels across different thresholds.
-
-```bash
-bash evaluate_all.sh
+cd evaluation
+bash run_kld_jsd.sh all-llm Llama-3.1-8B
 ```
 
-Results are saved under `evaluation/<mode>/<model>/validated_overlap/results_summary.csv`
+Outputs are written to:
+
+- `evaluation/<mode>/<model>/kld_jsd/*`
+
+Typical files include:
+
+- `<prefix>_summary.csv`
+- `<prefix>_chaos_jsd_kl.csv`
+- `<prefix>_varierr_jsd_kl.csv`
+- `<prefix>_merged_errors.csv`
+
+### Overlap of Validated Labels
+
+The overlap summary CSVs are saved under:
+
+- `evaluation/<mode>/<model>/validated_overlap/results_summary.csv`
+
+The current repo contains [evaluation/precision_recall.py](/Users/phoebeeeee/ongoing/LLM_AED/evaluation/precision_recall.py:1), but the shell wrapper [evaluation/run_pre_re.sh](/Users/phoebeeeee/ongoing/LLM_AED/evaluation/run_pre_re.sh:1) uses hard-coded absolute paths and needs adjustment before it can be run successfully in this checkout.
 
 ### AED
 
-Report average precision (AP), as well as precision and recall at the top 100 predictions (P@100 and R@100).
-
-```bash
-bash ./run_eval.sh
-```
-Results are saved under 
-
-
-
-
-
+The repo contains [evaluation/run_aed.sh](/Users/phoebeeeee/ongoing/LLM_AED/evaluation/run_aed.sh:1), but it currently points to `../LLM_AED/validation/validation_results` and to `evaluate.py`, which is not present in this repository. This step therefore needs script fixes before it can be reproduced from this checkout.
 
 ## Downstream Fine-Tuning
-####  Evaluate error removal impact on downstream NLI task performance.
 
-Use these notebooks to generate different training sets — with or without injected noise or filtered errors:
-- `notebooks/injecting_noise_self_validated.ipynb` 
-- `notebooks/injecting_noise_peer_validated.ipynb`
+Use these notebooks for dataset preparation:
+
 - `notebooks/chaosnli_dist.ipynb`
-- `notebooks/removing_llm-errors.ipynb` 
+- `notebooks/removing_llm_errors.ipynb`
+- `notebooks/auxiliary.ipynb`
 
-
-Run the following scripts to fine-tune and evaluate:
+Fine-tuning scripts are located in `fine-tuning/`, not `scripts/`:
 
 ```bash
-bash scripts/varierr_tune_bert.sh
-bash scripts/varierr_tune_roberta.sh
- ```
+cd fine-tuning
+bash varierr_tune_bert.sh
+bash varierr_tune_roberta.sh
+```
+
+These scripts currently save outputs to:
+
+- `output/bert_repeated_errorless/run.log`
+- `output/roberta_repeated_errorless/run.log`
+
+They also reference `run.py`, `../train_chaosnli_dist`, `../bert_finetuned`, `../roberta_finetuned`, `../dataset/dev_cleaned.json`, and `../dataset/test_cleaned.json`, so those resources must exist before the scripts can run successfully.
