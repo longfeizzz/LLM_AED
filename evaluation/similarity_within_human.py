@@ -7,7 +7,7 @@ from transformers import AutoTokenizer, AutoModel
 import torch.nn.functional as F
 from scipy.spatial.distance import cosine, euclidean
 
-ROOT_FILE = "/mounts/data/proj/zlongfei/ZLF/llama_8b_generation_raw.jsonl"
+ROOT_FILE = "../dataset/varierr.json"
 N_GRAMS = [1, 2, 3]
 
 nlp = spacy.load("en_core_web_md")
@@ -43,8 +43,6 @@ def syntactic_diversity(a_text, b_text, n):
     cb = get_ngram_counts(spacy_pos(b_text), n)
     return overlap_ratio(ca, cb)
 
-LABEL_MAP = {"e": "entailment", "n": "neutral", "c": "contradiction"}
-
 def load_records(path):
     records = []
     with open(path, "r", encoding="utf-8") as f:
@@ -53,23 +51,17 @@ def load_records(path):
                 records.append(json.loads(line))
     return records
 
-def extract_reasons(rec):
-    buckets = {"entailment": [], "neutral": [], "contradiction": []}
-    ge = rec.get("generated_explanations") or []
-    for item in ge:
-        if not isinstance(item, (list, tuple)) or len(item) != 2:
-            print(f"[WARN] Invalid generated_explanations item: {item}")
-            continue
-        reason, code = item
-        if not isinstance(reason, str) or not reason.strip():
-            print(f"[WARN] Invalid reason: {reason}")
-            continue
-        code = (code or "").strip().lower()
-        lbl = LABEL_MAP.get(code)
-        if lbl:
-            buckets[lbl].append(reason.strip())
-    return buckets
-
+def extract_reasons(rec: dict, key: str):
+    lst = rec.get(key, []) or []
+    reasons = []
+    for item in lst:
+        if isinstance(item, dict):
+            r = item.get("reason")
+            if isinstance(r, str) and r.strip():
+                reasons.append(r.strip())
+        elif isinstance(item, str) and item.strip():
+            reasons.append(item.strip())
+    return reasons
 
 device = "cuda" if torch.cuda.is_available() else "cpu"
 tok = AutoTokenizer.from_pretrained("sentence-transformers/all-distilroberta-v1")
@@ -84,14 +76,12 @@ def sentence_embedding(text):
     emb = torch.sum(token_embeddings * attn_mask, 1) / torch.clamp(attn_mask.sum(1), min=1e-9)
     return F.normalize(emb, p=2, dim=1).cpu().numpy()[0]
 
-
 def cosine_similarity(e1, e2):
     return float(np.dot(e1, e2))  
     # return -cosine(e1, e2) + 1
 
 def euclidean_similarity(e1, e2):
     return 1.0 / (1.0 + np.linalg.norm(e1 - e2))
-
 
 
 
@@ -106,14 +96,13 @@ def main():
     }
 
     for rec in records:
-        buckets = extract_reasons(rec)
         for lbl in ["entailment", "neutral", "contradiction"]:
-            reasons = buckets[lbl]
+            reasons = extract_reasons(rec, lbl)
             # print(f"Processing {lbl} with {len(reasons)} reasons...")
             if len(reasons) < 2:
                 continue
 
-            # token_lists = [tokenize(r) for r in reasons]
+            # token_lists = [spacy_tokens(r) for r in reasons]
             embeds = [sentence_embedding(r) for r in reasons]
 
             for i, j in itertools.combinations(range(len(reasons)), 2):

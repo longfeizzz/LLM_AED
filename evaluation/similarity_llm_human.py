@@ -5,11 +5,14 @@ import spacy
 import torch
 from transformers import AutoTokenizer, AutoModel
 import torch.nn.functional as F
+import sys
 
-ROOT_LLM_DIR = "/Users/phoebeeeee/ongoing/LLM_AED/new_processing/validation_result/llm_vs_human_before"
-ROOT_VAR_FILE = "/Users/phoebeeeee/ongoing/LLM_AED/dataset/varierr/varierr.json" 
-LOG_PATH = "./llm_varierr_similarity_before.log"
+ROOT_LLM_DIR = sys.argv[1]
+ROOT_VAR_FILE = sys.argv[2]
+LOG_PATH = "./llm_varierr_similarity.log"
 N_GRAMS = [1, 2, 3]
+
+
 
 logging.basicConfig(
     filename=LOG_PATH,
@@ -64,50 +67,42 @@ def load_records(path):
                 records.append(json.loads(line))
     return records
 
-def load_records_from_folder(folder_path):
+def load_records_auto(path):
     all_data = []
-    for fname in sorted(os.listdir(folder_path)):
-        if fname.endswith(".jsonl"):
-            fpath = os.path.join(folder_path, fname)
-            recs = load_records(fpath)
-            all_data.append((fname, recs))
+
+    fname = os.path.basename(path)
+    recs = load_records(path)
+    all_data.append((fname, recs))
+
     return all_data
 
-
-def extract_llm_buckets(rec):
+def extract_llm_buckets(rec, use_validation=False):
     buckets = {lbl: [] for lbl in LABELS}
     ge = rec.get("generated_explanations") or []
     for item in ge:
         if not isinstance(item, (list, tuple)) or len(item) < 2:
             print(f"[WARN] Invalid generated_explanations item: {item}")
             continue
-        reason, code = item
+        reason = item[0]
+        code = item[1]
+        validation = item[2] if len(item) > 2 else None
         if not isinstance(reason, str) or not reason.strip():
             print(f"[WARN] Invalid reason: {reason}")
             continue
         if not isinstance(code, str):
             print(f"[WARN] Invalid label code: {code}")
             continue
+        
+        if use_validation:
+            if not isinstance(validation, str) or validation.lower() != "validated":
+                continue
+
         lbl = LABEL_MAP.get(code.strip().lower())
         if lbl:
             buckets[lbl].append(reason.strip())
 
     return buckets
 
-    #     reason, code, validation = item
-    #     if not isinstance(reason, str) or not reason.strip():
-    #         print(f"[WARN] Invalid reason: {reason}")
-    #         continue
-    #     if not isinstance(code, str):
-    #         print(f"[WARN] Invalid label code: {code}")
-    #         continue 
-    #     if not isinstance(validation, str) or validation.strip().lower() != "validated":
-    #         # print(f"[WARN] Invalid validation status: {validation}")
-    #         continue
-    #     lbl = LABEL_MAP.get(code.strip().lower())
-    #     if lbl:
-    #         buckets[lbl].append(reason.strip())
-    # return buckets
 
 def extract_varierr_reasons(rec: dict, key: str):
     lst = rec.get(key, []) or []
@@ -148,12 +143,13 @@ def euclidean_similarity(e1, e2):
 
 
 def main():
-    llm_sets = load_records_from_folder(ROOT_LLM_DIR)
+    llm_sets = load_records_auto(ROOT_LLM_DIR)
     var_records = load_records(ROOT_VAR_FILE)
+    USE_VALIDATION =  True 
 
     for fname, llm_records in llm_sets:
         if len(llm_records) != len(var_records):
-            log.warning(f"[{fname}] 条目数不一致: LLM={len(llm_records)}, VariErr={len(var_records)}")
+            log.warning(f"[{fname}] incorrct number: LLM={len(llm_records)}, VariErr={len(var_records)}")
             continue
 
         totals = {
@@ -166,7 +162,7 @@ def main():
 
 
         for rec_llm, rec_var in zip(llm_records, var_records):
-            llm_buckets = extract_llm_buckets(rec_llm)
+            llm_buckets = extract_llm_buckets(rec_llm, use_validation=USE_VALIDATION)
             var_buckets = extract_varierr_buckets(rec_var)
             for lbl in LABELS:
                 llm_reasons = llm_buckets.get(lbl, [])

@@ -5,8 +5,9 @@ import spacy
 import torch
 from transformers import AutoTokenizer, AutoModel
 import torch.nn.functional as F
+import sys
 
-ROOT_FILE = "/Users/phoebeeeee/ongoing/LLM_AED/new_processing/validation_result/all_llm/qwen_72b_peer/threshold/with_validation_0.7.jsonl"
+ROOT_FILE = sys.argv[1]
 N_GRAMS = [1, 2, 3]
 
 nlp = spacy.load("en_core_web_md")
@@ -52,31 +53,16 @@ def load_records(path):
                 records.append(json.loads(line))
     return records
 
-def extract_reasons(rec):
-    buckets = {"entailment": [], "neutral": [], "contradiction": []}
-    ge = rec.get("generated_explanations") or []
-    for item in ge:
-        if not isinstance(item, (list, tuple)) or len(item) != 2:
-            print(f"[WARN] Invalid generated_explanations item: {item}")
-            continue
-        reason, code = item
-        if not isinstance(reason, str) or not reason.strip():
-            print(f"[WARN] Invalid reason: {reason}")
-            continue
-        code = (code or "").strip().lower()
-        lbl = LABEL_MAP.get(code)
-        if lbl:
-            buckets[lbl].append(reason.strip())
-    return buckets
-
-def extract_reasons(rec):
+def extract_reasons(rec, use_validation=False):
     buckets = {"entailment": [], "neutral": [], "contradiction": []}
     ge = rec.get("generated_explanations") 
     for item in ge:
         if not isinstance(item, (list, tuple)) or len(item) < 3:
             print(f"[WARN] Invalid generated_explanations item: {item}")
             continue
-        reason, code, validation = item
+        reason = item[0]
+        code = item[1]
+        validation = item[2] if len(item) > 2 else None
 
         if not isinstance(reason, str) or not reason.strip():
             print(f"[WARN] Invalid reason: {reason}")
@@ -85,16 +71,14 @@ def extract_reasons(rec):
         if not isinstance(code, str):
             print(f"[WARN] Invalid label code: {code}")
             continue
-
-        if not isinstance(validation, str) or validation.strip().lower() != "validated":
-            # print(f"[INFO] Skipping unvalidated reason: {reason}")
-            continue
+        
+        if use_validation:
+            if not isinstance(validation, str) or validation.strip().lower() != "validated":
+                continue
 
         lbl = LABEL_MAP.get(code.strip().lower())
         if lbl:
             buckets[lbl].append(reason.strip())
-        else:
-            print(f"[WARN] Unknown label code: {code}")
     return buckets
 
 
@@ -125,58 +109,60 @@ def euclidean_similarity(e1, e2):
 
 def main():
     records = load_records(ROOT_FILE)
+    for mode in ["before", "after"]:
+        use_validation = (mode == "after")
+        print(f"\n=== Running {mode} validation ===")
+        totals = {
+            "lexical": {n: [] for n in N_GRAMS},
+            "syntactic": {n: [] for n in N_GRAMS},
+            "cosine": [],
+            "euclidean": []
+        }
 
-    totals = {
-        "lexical": {n: [] for n in N_GRAMS},
-        "syntactic": {n: [] for n in N_GRAMS},
-        "cosine": [],
-        "euclidean": []
-    }
+        for rec in records:
+            buckets = extract_reasons(rec, use_validation=use_validation)
+            for lbl in ["entailment", "neutral", "contradiction"]:
+                reasons = buckets[lbl]
+                # print(f"Processing {lbl} with {len(reasons)} reasons...")
+                if len(reasons) < 2:
+                    continue
 
-    for rec in records:
-        buckets = extract_reasons(rec)
-        for lbl in ["entailment", "neutral", "contradiction"]:
-            reasons = buckets[lbl]
-            # print(f"Processing {lbl} with {len(reasons)} reasons...")
-            if len(reasons) < 2:
-                continue
+                # token_lists = [tokenize(r) for r in reasons]
+                embeds = [sentence_embedding(r) for r in reasons]
 
-            # token_lists = [tokenize(r) for r in reasons]
-            embeds = [sentence_embedding(r) for r in reasons]
+                for i, j in itertools.combinations(range(len(reasons)), 2):
+                    # lexical
+                    for n in N_GRAMS:
+                        totals["lexical"][n].append(
+                            lexical_diversity(reasons[i], reasons[j], n)
+                        )
+                    # syntactic
+                    for n in N_GRAMS:
+                        totals["syntactic"][n].append(
+                            syntactic_diversity(reasons[i], reasons[j], n)
+                        )
+                    # semantic similarities
+                    cos = cosine_similarity(embeds[i], embeds[j])
+                    euc = euclidean_similarity(embeds[i], embeds[j])
+                    totals["cosine"].append(cos)
+                    totals["euclidean"].append(euc)
 
-            for i, j in itertools.combinations(range(len(reasons)), 2):
-                # lexical
-                for n in N_GRAMS:
-                    totals["lexical"][n].append(
-                        lexical_diversity(reasons[i], reasons[j], n)
-                    )
-                # syntactic
-                for n in N_GRAMS:
-                    totals["syntactic"][n].append(
-                        syntactic_diversity(reasons[i], reasons[j], n)
-                    )
-                # semantic similarities
-                cos = cosine_similarity(embeds[i], embeds[j])
-                euc = euclidean_similarity(embeds[i], embeds[j])
-                totals["cosine"].append(cos)
-                totals["euclidean"].append(euc)
+        print("=== Global Average Results ===")
+        print("Lexical:")
+        for n in N_GRAMS:
+            vals = totals["lexical"][n]
+            print(f"  {n}-gram: {np.mean(vals):.3f}" if vals else f"  {n}-gram: None")
 
-    print("=== Global Average Results ===")
-    print("Lexical:")
-    for n in N_GRAMS:
-        vals = totals["lexical"][n]
-        print(f"  {n}-gram: {np.mean(vals):.3f}" if vals else f"  {n}-gram: None")
+        print("Syntactic (POS):")
+        for n in N_GRAMS:
+            vals = totals["syntactic"][n]
+            print(f"  {n}-gram: {np.mean(vals):.3f}" if vals else f"  {n}-gram: None")
 
-    print("Syntactic (POS):")
-    for n in N_GRAMS:
-        vals = totals["syntactic"][n]
-        print(f"  {n}-gram: {np.mean(vals):.3f}" if vals else f"  {n}-gram: None")
-
-    if totals["cosine"]:
-        print(f"Semantic cosine similarity: {np.mean(totals['cosine']):.3f}")
-        print(f"Semantic euclidean similarity: {np.mean(totals['euclidean']):.3f}")
-    else:
-        print("Semantic: None")
+        if totals["cosine"]:
+            print(f"Semantic cosine similarity: {np.mean(totals['cosine']):.3f}")
+            print(f"Semantic euclidean similarity: {np.mean(totals['euclidean']):.3f}")
+        else:
+            print("Semantic: None")
 
 if __name__ == "__main__":
     main()
