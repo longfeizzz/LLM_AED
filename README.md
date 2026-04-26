@@ -240,7 +240,7 @@ bash run_similarity_within_llm.sh
 ```
 
 #### LLM-vs-human
-This script compares LLM-generated explanations with human-written explanations from the VariErr dataset.
+This script compares LLM-generated explanations with human-written explanations from the VariErr dataset. Default thresholds are set the same as the ones reported in the paper.
 
 ```bash
 bash run_similarity_llm_human.sh
@@ -261,6 +261,48 @@ Output will be displayed in terminal.
 
 
 ## Downstream Fine-Tuning
+### Preprocessing
+
+We clean the input data for fine-tuning by converting label sets into soft label distributions.
+Each file is in JSONL format. Each line (instance) has the following structure:
+```
+{
+  "uid": "123",
+  "premise": "A man is running",
+  "hypothesis": "Someone is moving",
+  "label": [0.5, 0.5, 0.0]
+}
+```
+
+#### VariErr baseline R1 and R2
+
+```bash
+cd evaluation
+python baseline_r1_r2.py
+```
+
+After running the script, two files are generated in the `dataset/` directory.
+
+
+#### Fine-tuning with EVADE labels (setup (a))
+
+
+
+```bash
+bash run_llm_fine_tuning.sh
+```
+
+After running the script, two files are saved under `LLM_AED/evaluation/<mode>/<model>/LLM-cleaned`. Default thresholds are set the same as the ones reported in the paper.
+
+
+#### Remove EVADE errors from VariErr R1 (setup (b))
+
+```bash
+bash run_remove_llm_error.sh
+```
+
+
+
 
 Useful notebooks in the current repo:
 
