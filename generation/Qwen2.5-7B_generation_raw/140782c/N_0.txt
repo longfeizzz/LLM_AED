@@ -1,0 +1,3 @@
+1. FGD and SCR technologies serve different purposes and have distinct designs, making replication impractical.
+2. The construction proximity to the ground does not imply functional similarity or replication potential between FGD and SCR systems.
+3. Replication would require identical design and function, which contradicts their differing roles in pollution control processes.

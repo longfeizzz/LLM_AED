@@ -1,0 +1,3 @@
+1. The statement directly contradicts the context by asserting safety despite the context suggesting increased risk.
+2. The context implies a trade-off between cost and safety, which is not acknowledged in the statement.
+3. The statement does not consider the underlying reasons for discounts that might relate to increased risk.

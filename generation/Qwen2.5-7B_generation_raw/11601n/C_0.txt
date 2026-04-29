@@ -1,0 +1,4 @@
+1. The statement contradicts the assumption of proportional relationship based on MWe.
+2. It does not align with the average capacity factor of 85 percent.
+3. It deviates from the specified conditions in Tables 4-4 and 4-5.
+4. Higher AC usage implies more efficient or stricter controls, which may not directly correlate with MWe alone.

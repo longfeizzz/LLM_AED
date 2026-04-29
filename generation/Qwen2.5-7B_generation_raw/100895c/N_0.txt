@@ -1,0 +1,4 @@
+1. The context does not specify what "output" and "resource" refer to.
+2. There's no mention of outputs or resources in the context provided.
+3. The context does not discuss whether every output has a resource.
+4. No examples or evidence supporting the statement are given in the context.

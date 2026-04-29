@@ -1,0 +1,4 @@
+1. Prospective and retrospective designs allow for comprehensive analysis of system performance over time, aiding in effective redesign.
+2. These designs enable comparison between past and future states, facilitating informed decisions during system redesign.
+3. By incorporating data from both before and after changes, these methods enhance the understanding needed for successful system redesign.
+4. The ability to study systems in various stages allows for identifying areas needing improvement, crucial for systematic redesign processes.

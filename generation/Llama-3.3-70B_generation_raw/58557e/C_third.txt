@@ -1,0 +1,2 @@
+1. The statement is too absolute, as it does not account for the time that is recorded after a caller gets through to an agent.
+2. The IRS may have a record of the time spent by callers who successfully connect with an agent, even if not for those who are discouraged or waiting.

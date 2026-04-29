@@ -1,0 +1,4 @@
+1. The statement may be incorrect if the average capacity factor of 85% or other assumptions used in Tables 4-4 and 4-5 do not hold true, leading to a miscalculation of AC usage relative to MWe.
+2. The statement could be false if there are discrepancies between the reported AC usage and actual mercury emissions from coal-fired facilities, indicating higher AC usage than expected MWe.
+3. If newer, more efficient mercury control technologies have been implemented at some coal-fired facilities, this could result in higher AC usage despite having similar MWe compared to older facilities.
+4. Variations in coal quality or other operational factors among coal-fired plants might lead to differences in AC usage that do not reflect MWe alone.

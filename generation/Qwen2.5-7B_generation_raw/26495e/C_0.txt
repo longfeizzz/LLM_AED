@@ -1,0 +1,4 @@
+1. The statement incorrectly attributes poor performance to the subgroups rather than the standard screens.
+2. Standard screens are designed to work across diverse populations but may fail in specific subgroups.
+3. Subgroups might have unique characteristics that are not adequately addressed by standard screening methods.
+4. Poor performance refers to the effectiveness of the screens in these subgroups, not the subgroups themselves.
