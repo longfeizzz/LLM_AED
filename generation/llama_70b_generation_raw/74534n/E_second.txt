@@ -1,2 +1,0 @@
-1. The statement doesn't match the context because it describes the train starting to move, but the context only mentions the train lying still, with no indication of it starting up.
-2. The context implies the train was previously moving since it has a back that is "far, far away" from the current point of observation, suggesting it had been in motion before coming to a stop.

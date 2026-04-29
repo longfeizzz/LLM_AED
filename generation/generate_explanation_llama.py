@@ -50,18 +50,26 @@ def process_jsonl(pipe, jsonl_path, output_dir):
 def parse_args():
     parser = argparse.ArgumentParser()
     parser.add_argument("--model_name", required=True, type=str, default=None)
-    parser.add_argument("--jsonl_path", type=str, default="../dataset/varierr.json")
+    parser.add_argument("--jsonl_path", type=str, default=None)
     parser.add_argument("--output_dir", type=str, default=None)
     return parser.parse_args()
 
 if __name__ == "__main__":
     args = parse_args()
 
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+
+    if args.jsonl_path is None:
+        args.jsonl_path = os.path.join(script_dir, "..", "dataset", "varierr.json")
+        args.jsonl_path = os.path.normpath(args.jsonl_path)
+
     if args.output_dir is None:
         model_short = args.model_name.split("/")[-1].replace("-Instruct", "")
-        output_dir = f"../generation/{model_short}_generation_raw"
+        output_dir = os.path.join(script_dir, f"{model_short}_generation_raw")
     else:
         output_dir = args.output_dir
+
+    os.makedirs(output_dir, exist_ok=True)
 
     print(f"Model: {args.model_name}")
     print(f"Output dir: {output_dir}")

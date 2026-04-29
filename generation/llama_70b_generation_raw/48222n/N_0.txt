@@ -1,3 +1,0 @@
-1. The context does not provide information about the actions or priorities of all users and system administrators, only those who pick obvious passwords and ignore security precautions.
-2. The statement implies a universal lack of prioritization of security among users and system administrators, which is not supported by the context that only criticizes specific behaviors.
-3. The context focuses on criticizing specific behaviors (picking obvious passwords and ignoring security precautions) rather than making a general statement about the priorities of users and system administrators.

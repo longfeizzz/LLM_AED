@@ -1,3 +1,0 @@
-1. The statement mentions using rope to bind the door, while the context mentions retied the "not", which is unclear and does not explicitly mention rope.
-2. The context does not specify that the door was bound shut, only that the "not" was retied, which may or may not be related to the door.
-3. The statement implies that the door was closed as they entered, but the context only mentions that the door was closed behind them, which could happen at any point after they entered.

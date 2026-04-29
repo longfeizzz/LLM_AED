@@ -1,2 +1,0 @@
-1. The context explicitly states that co-requesters cannot restrict the timing of the release of the product.
-2. The statement refers to an action that is outside the allowed capabilities of co-requesters as defined in the context.

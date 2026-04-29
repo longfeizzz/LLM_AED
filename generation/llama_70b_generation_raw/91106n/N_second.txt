@@ -1,3 +1,0 @@
-1. The context only mentions recovering "current overpayments" without specifying the recipients of those overpayments.
-2. The statement specifically mentions recovering overpayments made to insurers, while the context does not explicitly limit or specify the recipients of the overpayments.
-3. The context implies a general goal of recovering overpayments, but does not provide enough information to confirm that insurers are the target of this effort.

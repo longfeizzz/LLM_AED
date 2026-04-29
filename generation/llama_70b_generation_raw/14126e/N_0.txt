@@ -1,3 +1,0 @@
-1. The context does not specify the names or genres of the programs the friends like to watch.
-2. The context only mentions that the friends have particular programs they won't miss, but does not provide details about the content of those programs.
-3. The speaker's friends' viewing preferences are described in general terms, without providing specific examples or titles of programs.

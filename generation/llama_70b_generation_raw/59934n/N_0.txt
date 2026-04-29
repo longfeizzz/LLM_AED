@@ -1,3 +1,0 @@
-1. The context only mentions that the programs did not capture manufacturing and product reliability knowledge, but it does not imply that they are incapable of identifying anomalies in data.
-2. There is no information provided about the programs' ability to detect anomalies, making it impossible to determine the truth of the statement.
-3. The statement is about locating an anomaly, which is a specific task, whereas the context discusses the capture of general knowledge, making the relationship between the two unclear.

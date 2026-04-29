@@ -1,3 +1,0 @@
-1. The context and statement are semantically equivalent, making the relationship undetermined due to redundancy.
-2. The context and statement are asking the same question, resulting in a lack of determinable inference.
-3. The information provided in the context is essentially a paraphrase of the statement, leading to ambiguity in determining a clear relationship.

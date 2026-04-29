@@ -1,3 +1,0 @@
-1. The statement mentions replication, but the context only discusses the physical construction location of FGD systems in relation to SCR technology retrofits, not their functional or design replication.
-2. The context provides information about the relative location of construction (closer to the ground) but does not imply that FGD systems are designed to replicate or mimic SCR systems in any way.
-3. There is no information given about the purpose, design, or operation of FGD systems in relation to SCR systems that would suggest replication.

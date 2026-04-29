@@ -1,3 +1,0 @@
-1. The context only provides a command to write, without specifying any goal or purpose that would necessitate continuous practice.
-2. There is no information in the context about the current level of writing proficiency, making it unclear if practice is needed.
-3. The context lacks any evaluative or comparative component to determine if the writing needs improvement.

@@ -1,3 +1,0 @@
-1. The statement assumes a cause (the door being stuck) that is not explicitly mentioned in the context.
-2. There could be other reasons why the door did not budge, such as being locked or blocked by an object.
-3. The context only reports the effect (the door not budging) without providing information about the underlying reason.

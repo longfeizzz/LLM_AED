@@ -1,2 +1,0 @@
-1. The context does not mention pepper, it mentions salt, so there's no information to support the claim about pepper.
-2. The context states that salt is drying, which implies it is being made dry, not wet, and there's no reason to assume the same process applies to pepper.

@@ -1,3 +1,0 @@
-1. The context only mentions wax models, with no information about models made of clay.
-2. The material of the models mentioned in the context (wax) is different from the material in the statement (clay).
-3. There is no explicit statement confirming or denying the existence of clay models in the Civic Museum.

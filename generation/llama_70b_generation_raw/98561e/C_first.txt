@@ -1,3 +1,0 @@
-1. The statement is a negation of the expected outcome, implying a reversal of the original sentiment.
-2. The original context "was it bad" inquires about the negative aspect, while the statement "Was it not good?" inquires about the absence of a positive aspect, which are not exactly equivalent.
-3. The context implies a direct negative experience, whereas the statement implies the absence or lack of a positive experience, which may not necessarily be the same thing.
