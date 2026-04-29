@@ -42,10 +42,10 @@ def generate_response(model, tokenizer, messages):
     response = tokenizer.decode(gen_ids, skip_special_tokens=True)
     return response.strip()
 
-def process_jsonl(model, tokenizer, jsonl_path, output_dir):
+def process_json(model, tokenizer, json_path, output_dir):
     relationships = {"E_0.txt": "true", "N_0.txt": "undetermined", "C_0.txt": "false"}
 
-    with open(jsonl_path, "r", encoding="utf-8") as f:
+    with open(json_path, "r", encoding="utf-8") as f:
         lines = f.readlines()
 
     for line in tqdm(lines, desc="Generating Explanations"):
@@ -63,7 +63,7 @@ def process_jsonl(model, tokenizer, jsonl_path, output_dir):
 def parse_args():
     parser = argparse.ArgumentParser()
     parser.add_argument("--model_name", required=True, type=str, default=None)
-    parser.add_argument("--jsonl_path", type=str, default=None)
+    parser.add_argument("--json_path", type=str, default=None)
     parser.add_argument("--output_dir", type=str, default=None)
     return parser.parse_args()
 
@@ -72,9 +72,9 @@ if __name__ == "__main__":
 
     script_dir = os.path.dirname(os.path.abspath(__file__))
 
-    if args.jsonl_path is None:
-        args.jsonl_path = os.path.join(script_dir, "..", "dataset", "varierr.json")
-        args.jsonl_path = os.path.normpath(args.jsonl_path)
+    if args.json_path is None:
+        args.json_path = os.path.join(script_dir, "..", "dataset", "varierr.json")
+        args.json_path = os.path.normpath(args.json_path)
 
     if args.output_dir is None:
         model_short = args.model_name.split("/")[-1].replace("-Instruct", "")
@@ -94,4 +94,4 @@ if __name__ == "__main__":
     )
     tokenizer = AutoTokenizer.from_pretrained(args.model_name)
 
-    process_jsonl(model, tokenizer, args.jsonl_path, output_dir)
+    process_json(model, tokenizer, args.json_path, output_dir)
