@@ -1,0 +1,2 @@
+1. Signatures in manual systems are specifically used to indicate that an individual has reviewed and agrees with the content, thus serving as attestations, verifications, or approvals.
+2. In manual systems, signatures are the standard method to legally bind individuals to the authenticity and accuracy of documents, which aligns with the roles of attestation, verification, or approval.

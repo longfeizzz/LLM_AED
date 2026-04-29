@@ -1,0 +1,2 @@
+1. The context suggests taking extra items, not replacing the ones you have.
+2. Replacing implies discarding the current items, which is not advised in the context.

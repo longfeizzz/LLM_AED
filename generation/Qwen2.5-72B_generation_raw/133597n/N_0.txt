@@ -1,0 +1,3 @@
+1. Signatures in manual systems might also represent other actions or agreements beyond attestations, verifications, or approvals.
+2. The context does not specify that signatures cannot have additional meanings or functions.
+3. Signatures could be used for personal identification or authorization purposes unrelated to attestations, verifications, or approvals.

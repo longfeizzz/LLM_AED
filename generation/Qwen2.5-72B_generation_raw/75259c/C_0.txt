@@ -1,0 +1,2 @@
+1. The context only specifies the types of dining options (buffet and a la carte) but does not mention whether table service is provided.
+2. A buffet typically involves self-service, which implies that table service might not be available.

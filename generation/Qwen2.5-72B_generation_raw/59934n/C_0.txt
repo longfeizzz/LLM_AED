@@ -1,0 +1,2 @@
+1. The context indicates that the programs did not capture manufacturing and product reliability knowledge consistent with best practices, suggesting a lack of thorough data analysis.
+2. If best practices were not followed, it is less likely that anomalies in the data would be identified during production decision reviews.

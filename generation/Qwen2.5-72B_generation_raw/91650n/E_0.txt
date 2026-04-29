@@ -1,0 +1,3 @@
+1. Self-propelled items often contain motors or engines, which add significant weight.
+2. The materials used for self-propulsion, such as batteries or fuel tanks, are typically heavy.
+3. Structural reinforcements are necessary to support the components of self-propulsion, adding to the overall weight.

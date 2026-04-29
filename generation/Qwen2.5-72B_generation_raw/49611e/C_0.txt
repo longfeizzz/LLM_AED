@@ -1,0 +1,2 @@
+1. The context describes a chair being overturned, not an object being acquired.
+2. The question in the context is about how something was obtained, but does not specify an object.

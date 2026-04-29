@@ -1,0 +1,3 @@
+1. Some questions are universally applicable and do not require tailoring.
+2. Certain questions are specific to particular contexts or audiences and thus may need to be adjusted.
+3. Questions can vary in their relevance depending on the situation, making tailoring necessary in some cases but not others.

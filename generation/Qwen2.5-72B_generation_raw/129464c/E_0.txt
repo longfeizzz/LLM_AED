@@ -1,0 +1,2 @@
+1. The context mentions that it can entail both prospective and retrospective designs, which directly supports the statement's claim about system redesigns.
+2. System redesigns can benefit from both looking forward (prospective) and looking back (retrospective) to inform improvements and changes.

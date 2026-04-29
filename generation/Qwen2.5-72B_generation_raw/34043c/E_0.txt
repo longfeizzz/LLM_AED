@@ -1,0 +1,3 @@
+1. The Gaiety Theatre and Trump Tower are different locations, and the context only provides information about the Gaiety Theatre's ornate decor.
+2. The context does not give any information about the quality of decor at Trump Tower.
+3. The statement makes a claim about Trump Tower that is not supported by the provided context.

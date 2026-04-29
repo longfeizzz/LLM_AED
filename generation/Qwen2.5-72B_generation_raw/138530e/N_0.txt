@@ -1,0 +1,3 @@
+1. The object could vibrate without producing an audible hum.
+2. The vibration might not be of a frequency that produces a hum audible to human ears.
+3. The environment could be too noisy for the hum to be heard, even if it exists.

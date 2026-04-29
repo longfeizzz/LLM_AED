@@ -1,0 +1,2 @@
+1. The context does not provide information about the number of letters submitted each week.
+2. The context only specifies that one letter is published weekly, not how many are received.

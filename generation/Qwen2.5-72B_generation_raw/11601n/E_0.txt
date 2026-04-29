@@ -1,0 +1,4 @@
+1. The statement could be true if the amount of AC required for mercury control per unit of MWe is disproportionately high, leading to a greater overall AC usage compared to the total MWe.
+2. The statement might hold if there are additional coal-fired facilities not included in the total MWe calculation but still using AC for mercury control.
+3. It is possible that the capacity factor assumption of 85 percent underestimates the actual operational time of the coal-fired facilities, resulting in higher AC usage.
+4. The statement could be accurate if the tables (4-4 and 4-5) contain data that overestimate the efficiency of AC usage, leading to a higher reported AC usage relative to the total MWe.

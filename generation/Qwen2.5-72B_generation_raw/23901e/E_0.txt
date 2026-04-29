@@ -1,0 +1,2 @@
+1. Shuman's claim implies a criticism of Linux's user-friendliness by stating it lacks a graphical user interface.
+2. The claim can be seen as an accusation that Linux is less accessible to users who are not familiar with command-line interfaces.

@@ -1,0 +1,2 @@
+1. Co-requesters do not have the authority to restrict the timing of the product release.
+2. The context explicitly states that co-requesters cannot control the timing of the release.

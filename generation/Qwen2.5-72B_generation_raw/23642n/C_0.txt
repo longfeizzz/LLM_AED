@@ -1,0 +1,2 @@
+1. The context only provides information about the second half of the book, not the first part.
+2. The context does not imply anything about the content of the first part of the book.

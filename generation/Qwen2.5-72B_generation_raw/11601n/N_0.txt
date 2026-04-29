@@ -1,0 +1,4 @@
+1. The statement compares AC usage for mercury control to the total MWe of coal-fired facilities, but the context suggests a proportional relationship, not a direct comparison of magnitude.
+2. The context assumes an average capacity factor of 85 percent, which means the actual operational output may differ from the installed capacity, affecting the proportionality.
+3. Other assumptions in Tables 4-4 and 4-5 may influence the relationship between AC usage and MWe, making it unclear if the statement holds true.
+4. The statement does not account for variations in the efficiency of AC usage across different power plants, which could affect the overall proportionality.

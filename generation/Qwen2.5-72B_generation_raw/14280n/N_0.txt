@@ -1,0 +1,3 @@
+1. The context does not provide information on the realism or accuracy of the hunches.
+2. The context only mentions that the author started with hunches but does not evaluate their validity.
+3. There is no indication in the context whether the hunches were tested or validated against real-world scenarios in agency management.
