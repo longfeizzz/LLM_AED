@@ -1,0 +1,5 @@
+1. The speaker is asking the listener to follow the person they are referring to, but the speaker is not present at the location.
+2. The speaker is not giving the signal to the person they want followed, but rather to the listener.
+3. The speaker is not explicitly stating the signal is for the person to be followed, but rather for the listener to follow the person.
+4. The speaker is not clear about the identity of the person they are referring to.
+5. The speaker is not specifying the nature of the signal, leaving it open to interpretation.

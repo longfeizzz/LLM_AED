@@ -1,0 +1,4 @@
+1. The statement is a paraphrased version of the context, but the context provides additional information that the speaker finds relevant ("yep because it's when it's self propelled it's heavy yeah"), making the statement undetermined without this context.
+2. The statement is undetermined because it's a question ("in case you were wondering") and the context is a response to a question, making the statement's truth value dependent on the question being asked.
+3. The statement is undetermined because it's a paraphrased version of the context, and the context already implies the statement is true, making the statement redundant.
+4. The statement is undetermined because the context uses colloquial language ("yep", "yeah") and the statement is a more formal version of the context, making the statement's truth value dependent on the context's tone and intent.

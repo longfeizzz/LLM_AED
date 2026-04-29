@@ -1,0 +1,7 @@
+1. The context is about evaluation questions, but the statement is about the availability of statements.
+2. The term "evaluation" could refer to something broader than just questions.
+3. The term "statements" could refer to anything, not just written or spoken answers.
+4. The context does not specify what is being evaluated.
+5. The statement is too narrow in scope.
+6. The statement is ambiguous.
+7. The term "available" implies access to something, but the statement does not specify who or what has access.

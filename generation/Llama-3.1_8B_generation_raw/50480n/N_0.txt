@@ -1,0 +1,10 @@
+1. The statement is an inference about the speaker's confidence, which isn't directly supported by the context.
+2. The statement is a positive assertion, but the context is more neutral or reassuring.
+3. The statement assumes the speaker's opinion is the same as the listener's, which isn't explicitly stated in the context.
+4. The statement implies a comparison (more than adequate), which isn't supported by the context.
+5. The statement is a prediction about the listener's experience, which isn't directly related to the context.
+6. The statement is a subjective evaluation, which might not align with the listener's opinion.
+7. The statement is a response to a hypothetical situation, which isn't explicitly stated in the context.
+8. The statement assumes the listener will have a certain experience or outcome, which isn't guaranteed by the context.
+9. The statement is a personal opinion, which might not be universally applicable.
+10. The statement is a reassurance about a specific outcome, but the context is more general.

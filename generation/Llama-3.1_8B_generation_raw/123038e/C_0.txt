@@ -1,0 +1,4 @@
+1. The statement refers to "validation engagements" but the context mentions "attestation engagements".
+2. The statement uses "by and large acknowledged government evaluating guidelines" which is a translated version of the original phrase "generally accepted government auditing standards".
+3. The term "evaluating guidelines" does not exactly match the original term "auditing standards".
+4. The statement uses "ought to" which implies a recommendation rather than a requirement, whereas the context states "should state".

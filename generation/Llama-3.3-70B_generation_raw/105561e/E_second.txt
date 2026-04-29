@@ -1,0 +1,3 @@
+1. Instructors are given an armband, which serves as an identifier.
+2. Students can approach any instructor at any time to ask questions.
+3. Instructors are available and willing to provide information when not otherwise occupied.

@@ -1,0 +1,7 @@
+1. The statement does not account for the type of mail that is lost.
+2. The statement does not account for the frequency of mail loss in relation to the total volume of mail.
+3. The statement is too vague to accurately assess the impact of mail loss.
+4. The statement does not account for the reason behind mail loss.
+5. The statement does not account for the mail pieces that are intentionally avoided due to alternative bill-paying methods.
+6. The statement does not account for the mail pieces that are successfully delivered despite being lost initially.
+7. The statement is contradicted by the information that the number of mail pieces lost is too small to have any material impact.

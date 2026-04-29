@@ -1,0 +1,6 @@
+1. The statement implies that the movement of the object is a past event, but the context suggests that the movement is overdue and should have happened by now.
+2. The context implies that the movement should have been done in the past, but the statement says it hasn't been done yet.
+3. The statement focuses on the fact that the movement hasn't happened yet, but the context emphasizes that it's past the time it should have been done.
+4. The statement implies that the movement hasn't occurred at any point in the past, but the context suggests that it should have been done by now.
+5. The statement says it hasn't been moved yet, but the context implies that it's too late to move it now.
+6. The statement focuses on the fact that the movement is still pending, but the context emphasizes that it's past the deadline for the movement.

@@ -1,0 +1,8 @@
+1. The statement is about Japan, but the context is about China's civil war.
+2. The context does not mention Japan at all.
+3. A civil war involves conflict between citizens of the same country, but Japan has not had a civil war in the sense that the context implies.
+4. The context implies a conflict that affects Hong Kong, but Japan does not share a border with Hong Kong.
+5. The context implies a conflict that has a significant impact on Hong Kong, but Japan's conflicts do not typically affect Hong Kong.
+6. The context implies a conflict that occurred in the past, but Japan's most recent major conflict was World War II, not a civil war.
+7. The statement does not mention any conflict that would have sent echoes to Hong Kong.
+8. The statement does not mention China, which is the country implied by the context.

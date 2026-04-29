@@ -1,0 +1,3 @@
+1. Insurance companies want to verify the legitimacy of claims by ensuring the patient was sober at the time of incident to prevent fraudulent claims.
+2. The insurance companies are trying to minimize medical payments by denying claims that involve intoxication, which is a preventable cause of medical expenses.
+3. Following-up to confirm sobriety may help reduce medical payments by identifying patients who were intoxicated at the time of incident and reducing the likelihood of claim reimbursement.

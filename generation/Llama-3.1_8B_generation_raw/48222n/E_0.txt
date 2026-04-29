@@ -1,0 +1,6 @@
+1. Users' choice of obvious passwords indicates a lack of concern for security.
+2. System administrators' failure to implement basic security measures suggests a lack of attention to security.
+3. Both users and system administrators are being criticized for their security practices, implying a shared lack of prioritization.
+4. Users' and system administrators' actions (or inactions) demonstrate a disregard for security protocols.
+5. The criticism from the news suggests that users and system administrators are not taking security seriously.
+6. The fact that the news is berating users and system administrators for security mistakes implies that they are not prioritizing security.

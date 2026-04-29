@@ -1,0 +1,6 @@
+1. The door's immobility was due to it being stuck.
+2. The door's inability to move was caused by it being jammed.
+3. The door's failure to budge was a result of being obstructed.
+4. The door's stuck state led to its inability to move.
+5. The door's being stuck resulted in it not moving.
+6. The door's immobility was a direct consequence of it being stuck.

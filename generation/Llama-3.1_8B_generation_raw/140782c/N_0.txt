@@ -1,0 +1,5 @@
+1. The statement is about replication, which does not necessarily imply a physical similarity in construction height.
+2. The context only discusses construction height, which is not relevant to the concept of replication.
+3. Replication in a technical sense may refer to the functionality or efficiency of FGD systems in relation to SCR systems, not their physical construction.
+4. The statement may be referring to the design or operational goals of FGD systems, rather than their physical construction.
+5. The comparison is not about the physical construction height but rather the design or functionality goals of the two systems.

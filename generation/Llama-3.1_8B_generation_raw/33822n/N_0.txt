@@ -1,0 +1,5 @@
+1. Lack of clear connection between the two statements.
+2. Insufficient information to determine the relevance of the statement to the question.
+3. The statement is a reason or justification, not a direct answer to the question.
+4. The question seems to be asking for a reason or justification, and the statement provides one, making the question determined but the answer is a reason.
+5. The question is rhetorical and the statement is a response to it.

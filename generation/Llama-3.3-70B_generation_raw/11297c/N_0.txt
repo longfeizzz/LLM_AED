@@ -1,0 +1,3 @@
+1. The context mentions "Raises Concerns", which implies that not everyone is satisfied with the change.
+2. The transformation of control may have different impacts on various stakeholders, leading to mixed opinions.
+3. The word "Concerns" suggests that there are potential negative consequences or uncertainties associated with the change, which could lead to discontent among some individuals or groups.

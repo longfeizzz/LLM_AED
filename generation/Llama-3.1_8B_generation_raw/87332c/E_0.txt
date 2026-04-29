@@ -1,0 +1,5 @@
+1. NIPA does not consider capital gains on existing assets as savings.
+2. NIPA does not account for assets such as cat fur.
+3. The definition of savings in NIPA excludes certain types of assets.
+4. NIPA savings measurement does not include non-financial assets like cat fur.
+5. NIPA specifically excludes certain types of assets when calculating savings.

@@ -1,0 +1,5 @@
+1. Ca'daan performed two actions in sequence: closing the door and binding it shut with rope.
+2. The door was bound shut with rope after being closed.
+3. The action of closing the door was followed by an additional action to secure it.
+4. The door was closed and then secured with rope.
+5. The rope was used to bind the door shut after it was closed.

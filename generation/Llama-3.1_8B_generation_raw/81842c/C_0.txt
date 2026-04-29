@@ -1,0 +1,8 @@
+1. Julius asked the question.
+2. Julius was unsure of the answer.
+3. He had not previously been told the answer.
+4. He had not previously figured out the answer.
+5. He had not previously looked up the answer.
+6. He had not previously received the answer from someone else.
+7. He had not previously discovered the answer.
+8. He did not have access to the information that would have allowed him to know the answer.

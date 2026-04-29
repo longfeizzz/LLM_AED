@@ -1,0 +1,3 @@
+1. The sample collected for both tests has the same level of toxicity.
+2. The difference in test duration does not affect the toxicity measurement of the sample.
+3. The tests are performed at the same time or under the same conditions, eliminating variability in toxicity levels.

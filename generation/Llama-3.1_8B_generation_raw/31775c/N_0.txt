@@ -1,0 +1,5 @@
+1. The statement is about TV stations and documentaries, but the context is about radio stations and music.
+2. The context is about finding a specific type of music, while the statement is about documentaries about space travel.
+3. There is no mention of space travel or documentaries in the context, making the relationship between the statement and context undetermined.
+4. The context is asking for a general category of music, while the statement is asking for a specific type of content (documentaries).
+5. The statement is asking about TV stations, while the context is asking about radio stations.

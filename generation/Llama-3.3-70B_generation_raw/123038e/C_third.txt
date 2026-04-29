@@ -1,0 +1,2 @@
+1. The term "validation engagements" is used instead of "attestation engagements".
+2. The phrase "by and large acknowledged" is a non-standard way of expressing "generally accepted".

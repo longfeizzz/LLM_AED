@@ -1,0 +1,3 @@
+1. The statement is a paraphrased version of the context, using synonyms such as "validation engagements" for "attestation engagements", "ought to express" for "should state", and "by and large acknowledged" for "generally accepted".
+2. The context and statement convey the same requirement for reporting on engagements, with the statement using different wording to convey the same idea.
+3. The term "validation engagements" can be considered equivalent to "attestation engagements" in this context, allowing the statement to be a true representation of the context.

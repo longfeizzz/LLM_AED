@@ -1,0 +1,6 @@
+1. The duration was excessively long.
+2. The time taken was longer than expected.
+3. The activity or process took a very long time.
+4. The period was prolonged beyond a reasonable or acceptable length.
+5. The event or action dragged on for an extended period.
+6. The time elapsed was significantly longer than normal.

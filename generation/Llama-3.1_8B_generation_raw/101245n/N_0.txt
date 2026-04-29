@@ -1,0 +1,6 @@
+1. Lack of information about the extent of her awareness after the stroke.
+2. No information about the severity of her stroke in relation to her awareness.
+3. The statement's truth value depends on the comparison to other strokes.
+4. The statement's truth value depends on the comparison to other people's strokes.
+5. The statement's truth value depends on the comparison to other types of brain injuries.
+6. The statement's truth value depends on the comparison to other medical conditions.

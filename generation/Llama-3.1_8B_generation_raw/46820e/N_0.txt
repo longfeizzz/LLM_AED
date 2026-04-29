@@ -1,0 +1,7 @@
+1. The speaker's current part-time job is not in the same restaurant as their first part-time job.
+2. The speaker's current favorite restaurant is not the same as the one they had their first part-time job at.
+3. The speaker's current favorite restaurant is not located in the same town as the one they had their first part-time job at.
+4. The speaker's current favorite restaurant is not the same as the one they mentioned having their first part-time job at.
+5. The speaker's current favorite restaurant has a different price range than the one they mentioned having their first part-time job at.
+6. The speaker is unsure about the price range of their current favorite restaurant.
+7. The speaker is unsure about the location of their current favorite restaurant.

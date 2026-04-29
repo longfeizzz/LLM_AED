@@ -1,0 +1,6 @@
+1. The statement is a question, and questions cannot be classified as true or false.
+2. The statement is asking for clarification or confirmation, and its truth value depends on the listener's response.
+3. The statement is assuming a specific interpretation of "near it constantly," and its truth value depends on the context of "it" and the definition of "near."
+4. The statement is asking for confirmation of a previous statement, and its truth value depends on the accuracy of the previous statement.
+5. The statement is a paraphrase of a previous statement, and its truth value is equivalent to the original statement.
+6. The statement is a matter of interpretation, and its truth value depends on the listener's perspective or understanding of the situation.

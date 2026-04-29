@@ -1,0 +1,2 @@
+1. The statement is true because it refers to the patient subgroups, not the screens themselves, performing poorly, implying the screens are not effective for these subgroups.
+2. The screens are being used on the subgroups, so "perform" refers to how well the screens work for the subgroups, not the subgroups performing an action.

@@ -1,0 +1,3 @@
+1. The context actually states that the Administrator reduces allowance allocations, not balances them, according to the requirements of section 414.
+2. Section 414 is related to reducing allocations, not directly balancing them, as it is the Administrator who performs the reduction.
+3. The reduction is pro rata, implying a decrease in allocations, rather than a balancing act that could involve either increases or decreases to achieve equilibrium.

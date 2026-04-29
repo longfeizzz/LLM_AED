@@ -1,0 +1,7 @@
+1. The statement is a direct quote of the preceding sentence.
+2. The statement is a paraphrased version of the preceding sentence.
+3. The statement expresses the same opinion as the preceding sentence.
+4. The statement is a confirmation of the preceding sentence's sentiment.
+5. The statement is a restatement of the preceding sentence's content.
+6. The statement is a repetition of the preceding sentence's assertion.
+7. The statement is an agreement with the preceding sentence's viewpoint.

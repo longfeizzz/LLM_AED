@@ -1,0 +1,7 @@
+1. The statement is too vague to assess generalizability.
+2. The statement does not provide enough information to determine if the resource is sufficient or inadequate.
+3. The statement lacks specificity about the type and quantity of resources.
+4. The statement does not provide a clear scope for what constitutes an "output".
+5. The statement does not specify the context in which the output is being evaluated.
+6. The statement does not provide any information about the relationship between the output and the resource.
+7. The statement does not provide enough information to determine if the resource is relevant to the output.

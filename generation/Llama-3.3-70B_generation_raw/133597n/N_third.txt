@@ -1,0 +1,2 @@
+1. The context does not explicitly state that signatures or initials are exclusively used for attestations, verifications, and approvals, implying other possible uses.
+2. The phrase "usually shown" suggests that there may be exceptions or other instances where signatures or initials are used for different purposes.

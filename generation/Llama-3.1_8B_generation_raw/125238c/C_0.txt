@@ -1,0 +1,4 @@
+1. The statement is false because the context specifies the General Fund, not General Mills.
+2. The statement is false because the context specifies transferring to another entity, but General Mills is a company name, not an entity type.
+3. The statement is false because the context requires the entity to be the General Fund or another entity, not a company name like General Mills.
+4. The statement is false because it does not specify the type of entity that receives the nonexchange revenue, which is required by the context.
