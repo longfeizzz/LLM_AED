@@ -1,2 +1,0 @@
-1. The context mentions "extremely limited exceptions", which implies that not all exceptions are being eliminated.
-2. The presence of established exceptions in 31 U.S.C. suggests that some exceptions are intentionally being retained.

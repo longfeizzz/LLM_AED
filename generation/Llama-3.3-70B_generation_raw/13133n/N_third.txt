@@ -1,3 +1,0 @@
-1. The context does not provide information about the number of letters submitted, only that one is published.
-2. It is possible that only one letter is submitted each week, which would be the one published.
-3. The presence of an editorial riposte does not imply multiple submissions, only a response to the published letter.
