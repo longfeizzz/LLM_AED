@@ -1,0 +1,3 @@
+1. The statement does not specify a lower bound on cost, only an upper one.
+2. The context provides a range of 5-6 cents, which is significantly lower than $5.
+3. The cost mentioned in the context is per piece, while the statement refers to a general maximum cost without specifying per unit.

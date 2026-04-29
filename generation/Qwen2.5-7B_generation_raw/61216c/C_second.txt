@@ -1,0 +1,2 @@
+1. High-value cards are seeded sparsely to encourage repeated purchases.
+2. Packs contain a mix of common, uncommon, and rare cards, not exclusively high-value items.

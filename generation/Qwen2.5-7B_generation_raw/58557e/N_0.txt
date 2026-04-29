@@ -1,0 +1,3 @@
+1. The context does not specify whether there are recordings of caller times or not; it only mentions that the IRS would have no record of time before reaching an agent.
+2. The context refers to a scenario where callers may be discouraged, which does not directly imply the absence of recordings.
+3. The statement focuses solely on the non-existence of recordings without providing information about the actual existence or absence of such recordings according to the context.

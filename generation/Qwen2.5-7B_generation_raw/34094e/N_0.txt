@@ -1,0 +1,4 @@
+1. The question may have been rhetorical and did not require an explicit answer.
+2. The statement could be part of a larger conversation where the context does not clearly indicate a preceding question.
+3. The response might be to a statement rather than a question, negating the need for a yes/no answer.
+4. The speaker could be agreeing with a previous negative assertion made by someone else.

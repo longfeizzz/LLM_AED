@@ -1,0 +1,2 @@
+1. The experiments' results aligned with random chance, indicating no predictive power.
+2. A better predictor would show consistent results, which was not observed.

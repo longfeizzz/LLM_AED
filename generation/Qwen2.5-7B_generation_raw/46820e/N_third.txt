@@ -1,0 +1,4 @@
+1. The current part-time job is not the first one.
+2. The restaurant mentioned is not the first place where the person worked part-time.
+3. The statement does not specify if the current job is still the first part-time job.
+4. The context does not confirm the restaurant in Salisbury is the location of the first part-time job.

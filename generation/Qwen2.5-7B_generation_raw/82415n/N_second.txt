@@ -1,0 +1,2 @@
+1. The context does not specify his previous state, only that he became sober.
+2. He could have been sober before and never been drunk.
