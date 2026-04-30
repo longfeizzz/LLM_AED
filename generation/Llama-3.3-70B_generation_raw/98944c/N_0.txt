@@ -1,0 +1,5 @@
+1. Lack of information about the context or subject being evaluated.
+2. Insufficient data to determine the relationship between the evaluation and other factors.
+3. Evaluation questions may not provide explicit statements about the evaluation itself.
+4. The presence of implicit or unstated assumptions in the evaluation questions.
+5. Limited scope of the evaluation questions, focusing only on specific aspects.

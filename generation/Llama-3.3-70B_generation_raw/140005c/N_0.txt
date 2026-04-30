@@ -1,0 +1,3 @@
+1. The duration of the range-finding test and the follow-up definitive test differ, which can affect the observed toxicity.
+2. The sample used in the range-finding test may have been collected at a different time than the sample used in the follow-up test, potentially resulting in varying levels of toxicity.
+3. The level of toxicity in the sample can change significantly between the time of collection for the range-finding test and the time of collection for the follow-up test.

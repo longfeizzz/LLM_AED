@@ -1,0 +1,2 @@
+1. The statement is a paraphrase of the context, thus it is entailed.
+ No explanation for undetermined is applicable in this case.

@@ -1,0 +1,3 @@
+1. The statement contains a double negative ("wasn't unlocked") which implies the door was locked, contradicting the context.
+2. The context explicitly states the door "was locked", while the statement implies surprise that the door was not unlocked, which is consistent with the door being locked, but the wording of the statement is opposite of what would be expected given the context.
+3. The original context uses a statement of fact ("the door was locked"), while the statement in question is an expression of surprise or inquiry, which may not necessarily convey the same information or intent.
