@@ -1,2 +1,0 @@
-1. The timeframe "per week" implies a weekly frequency, which does not match the daily frequency stated in "Every day".
-2. "Every day" suggests a daily occurrence, which is more frequent than a weekly occurrence implied by "per week".

@@ -1,2 +1,0 @@
-1. The actual increase exceeded the expected increase, indicating better-than-expected performance.
-2. The difference between the actual and expected increase is 3, showing a positive deviation from the forecast.
