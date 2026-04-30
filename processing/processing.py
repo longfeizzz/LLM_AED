@@ -15,8 +15,8 @@ label_map = {"E": "e", "N": "n", "C": "c"}
 
 
 # raw generation to jsonl file
-def inject_one_model(explanation_root: Path, input_jsonl: Path, output_jsonl: Path):
-    with open(input_jsonl, "r", encoding="utf-8") as f:
+def inject_one_model(explanation_root: Path, input_json: Path, output_jsonl: Path):
+    with open(input_json, "r", encoding="utf-8") as f:
         instances = [json.loads(line) for line in f]
 
     written = 0
@@ -107,19 +107,22 @@ def merge_jsonls(jsonl_files: list[Path], output_path: Path):
 
 def parse_args():
     parser = argparse.ArgumentParser()
-    parser.add_argument("--generation_dir", type=str, default="../generation")
-    parser.add_argument("--input_jsonl", type=str, default="../dataset/varierr.json")
-    parser.add_argument("--processing_dir", type=str, default="../processing")
-    parser.add_argument("--all_dir", type=str, default="../processing/generation_all.jsonl")
+    parser.add_argument("--generation_dir", type=str, default=None)
+    parser.add_argument("--input_json", type=str, default=None)
+    parser.add_argument("--processing_dir", type=str, default=None)
+    parser.add_argument("--all_dir", type=str, default=None)
     return parser.parse_args()
 
 
 def main():
     args = parse_args()
 
-    generation_dir = Path(args.generation_dir)
-    input_jsonl = Path(args.input_jsonl)
-    processing_dir = Path(args.processing_dir)
+    script_dir = Path(__file__).resolve().parent
+    repo_root = script_dir.parent
+
+    generation_dir = Path(args.generation_dir) if args.generation_dir else repo_root / "generation"
+    input_json = Path(args.input_json) if args.input_json else repo_root / "dataset" / "varierr.json"
+    processing_dir = Path(args.processing_dir) if args.processing_dir else repo_root / "processing"
     processing_dir.mkdir(parents=True, exist_ok=True)
 
     raw_folders = sorted(generation_dir.glob("*_generation_raw"))
@@ -129,12 +132,18 @@ def main():
 
     jsonl_files = []
     for folder in raw_folders:
-        model_name = folder.name  
+        model_name = folder.name
         output_jsonl = processing_dir / f"{model_name}.jsonl"
-        inject_one_model(folder, input_jsonl, output_jsonl)
+        inject_one_model(folder, input_json, output_jsonl)
         jsonl_files.append(output_jsonl)
 
-    all_path = processing_dir / args.all_dir
+    if args.all_dir:
+        all_path = Path(args.all_dir)
+        if not all_path.is_absolute():
+            all_path = processing_dir / all_path
+    else:
+        all_path = processing_dir / "generation_all.jsonl"
+
     merge_jsonls(jsonl_files, all_path)
     print("All done.")
 
