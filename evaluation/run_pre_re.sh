@@ -24,12 +24,19 @@ for mode_dir in "$BASE_DIR"/*; do
         fi
         
         model=$(basename "$model_dir")
+        threshold_dir="$model_dir/threshold"
         validation_dir="$model_dir/validated_overlap"
     
         echo "[Info] Processing $mode/$model"
-        
-        # Run the Python script for this directory
-        python3 "$SCRIPT_PATH" "$validation_dir"
+        echo "[Info] threshold dir: $threshold_dir"
+        echo "[Info] output dir: $validation_dir"
+
+        if [ ! -d "$threshold_dir" ]; then
+            echo "Skipping $mode/$model"
+            continue
+        fi
+
+        python "$SCRIPT_PATH" "$threshold_dir" --output_dir "$validation_dir" --stats --evaluate
         
         if [ $? -eq 0 ]; then
             echo "Results saved to: $validation_dir/results_summary.csv"
