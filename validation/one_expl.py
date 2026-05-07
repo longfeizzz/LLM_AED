@@ -80,17 +80,26 @@ def main():
     parser.add_argument("--output_dir", type=str, default=None)
     args = parser.parse_args()
 
+    script_dir = Path(__file__).resolve().parent
+    repo_root = script_dir.parent
     model_short = args.model_name_or_path.split("/")[-1].replace("-Instruct", "")
-    input_path = args.input_path or f"../processing/{model_short}_generation_raw.jsonl"
-    output_dir = Path(args.output_dir) if args.output_dir else Path(f"../validation/validation_results/one_expl/{model_short}")
+
+    input_path = Path(args.input_path) if args.input_path else repo_root / "processing" / f"{model_short}_generation_raw.jsonl"
+    output_dir = Path(args.output_dir) if args.output_dir else repo_root / "validation" / "validation_results" / "one_expl" / model_short
+    output_dir.mkdir(parents=True, exist_ok=True)
+    output_path = output_dir / "scores.json"
 
     print(f"Model: {args.model_name_or_path}")
     print(f"Input: {input_path}")
     print(f"Output dir: {output_dir}")
 
+    if not Path(input_path).exists():
+        raise FileNotFoundError(f"No input path: {input_path}")
+    if not output_dir.exists():
+        raise FileNotFoundError(f"No output directory: {output_dir}")
+
     model_dict = load_model(args.model_name_or_path, args.model_type)
     tokenizer = model_dict["tokenizer"]
-    output_dir.mkdir(parents=True, exist_ok=True)
 
     dataset = datasets.Dataset.from_json(input_path)
     predictions = {}
@@ -116,10 +125,10 @@ def main():
             print(f"{reason_id}: {probability}")
             predictions[reason_id] = probability
 
-    with open(output_dir / "scores.json", "w") as f:
+    with open(output_path, "w") as f:
         json.dump(predictions, f, indent=2)
 
-    print(f"Done. Output saved to: {output_dir / 'scores.json'}")
+    print(f"Done. Output saved to: {output_path}")
 
 
 if __name__ == "__main__":

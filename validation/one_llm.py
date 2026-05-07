@@ -118,20 +118,21 @@ def main():
     model_short = args.model_name_or_path.split("/")[-1].replace("-Instruct", "")
 
     input_path = Path(args.input_path) if args.input_path else repo_root / "processing" / f"{model_short}_generation_raw.jsonl"
-    output_dir = Path(args.output_dir) if args.output_dir else repo_root / "validation" / "validation_results" / "one-llm" / model_short
+    output_dir = Path(args.output_dir) if args.output_dir else repo_root / "validation" / "validation_results" / "one_llm" / model_short
+    output_dir.mkdir(parents=True, exist_ok=True)
     output_path = output_dir / "scores.json"
 
     print(f"Model: {args.model_name_or_path}")
     print(f"Input: {input_path}")
     print(f"Output dir: {output_dir}")
-    print(f"Output file: {output_path}")
 
     if not Path(input_path).exists():
         raise FileNotFoundError(f"No input path: {input_path}")
-
+    if not output_dir.exists():
+        raise FileNotFoundError(f"No output directory: {output_dir}")
+    
     model_dict = load_model(args.model_name_or_path, args.model_type)
     tokenizer = model_dict["tokenizer"]
-    output_dir.mkdir(parents=True, exist_ok=True)
 
     dataset = datasets.Dataset.from_json(input_path)
     predictions = {}
@@ -172,7 +173,6 @@ def main():
 
     exists = output_path.exists()
     print(f"Done. Output saved to: {output_path}")
-    print(f"Output file found: {exists}")
 
 
 if __name__ == "__main__":
