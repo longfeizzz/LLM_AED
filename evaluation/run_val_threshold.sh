@@ -1,7 +1,7 @@
 #!/bin/bash
 
-VALIDATION_ROOT="LLM_AED/validation/validation_results"
-EVAL_ROOT="LLM_AED/evaluation"
+VALIDATION_ROOT="../validation/validation_results"
+EVAL_ROOT="."
 
 for mode_dir in "$VALIDATION_ROOT"/*/; do
   mode=$(basename "$mode_dir")
