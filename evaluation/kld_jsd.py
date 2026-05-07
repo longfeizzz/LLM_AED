@@ -64,8 +64,8 @@ def load_human_counts_chaos(chaos_jsonl):
             if not line.strip():
                 continue
             r = json.loads(line)
-            counts = r.get("chaosnli_labels", {})
-            dist_map[r["id"]] = {
+            counts = r.get("label_counter", {})
+            dist_map[r["uid"]] = {
                 lbl: float(counts.get(lbl, 0) or 0) for lbl in LABEL_ORDER
             }
     return dist_map
@@ -170,12 +170,15 @@ def main():
 
     # 2. JSD/KLD - ChaosNLI
     model_counts = load_model_counts(args.model_jsonl, round_idx=args.round_idx)
+    print(f"Loaded {len(model_counts)} model counts from {args.model_jsonl}")
     chaos_counts = load_human_counts_chaos(args.chaos_jsonl)
+    print(f"Loaded {len(chaos_counts)} chaos counts from {args.chaos_jsonl}")
     chaos_csv = os.path.join(args.out_dir, f"{args.prefix}_chaos_jsd_kl.csv")
     compare_distributions(model_counts, chaos_counts, chaos_csv, title="ChaosNLI")
 
     # 3. JSD/KL - VariErr
     vari_counts = load_human_counts_varierr(args.varierr_json, round_idx=args.round_idx)
+    print(f"Loaded {len(vari_counts)} varierr counts from {args.varierr_json} for round {args.round_idx}")
     vari_csv = os.path.join(args.out_dir, f"{args.prefix}_varierr_jsd_kl.csv")
     compare_distributions(model_counts, vari_counts, vari_csv, title="VariErr")
 
