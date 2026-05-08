@@ -4,7 +4,7 @@ from pathlib import Path
 from tqdm import tqdm
 import sys
 
-VARIERR_FILE = "/LLM_AED/dataset/varierr/varierr.json"
+VARIERR_FILE = "../dataset/varierr.json"
 
 label_map_short2long = {'e': 'entailment', 'n': 'neutral', 'c': 'contradiction'}
 
@@ -28,12 +28,12 @@ def convert_label_list_to_dist(label_list):
         return [0.0, 0.0, 0.0]
     return [e / total, n / total, c / total]
 
-def make_clean_record(raw):
+def make_clean_record(raw, dist):
     return {
         "uid": raw.get("id", raw.get("uid")),
         "premise": raw.get("context"),
         "hypothesis": raw.get("statement"),
-        "label": raw.get("label"),
+        "label": dist,
     }
 
 def process_one_file(model_file: str, out_dir: str):
@@ -44,7 +44,7 @@ def process_one_file(model_file: str, out_dir: str):
     varierr_data = load_jsonl_to_dict_by_id(Path(VARIERR_FILE))
     model_data = load_jsonl_to_dict_by_id(model_path)
 
-    output_file = out_dir / "varierr_r2_cleaned.jsonl"
+    output_file = out_dir / "varierr_cleaned.json"
 
     merged_cleaned = []
 
@@ -62,7 +62,7 @@ def process_one_file(model_file: str, out_dir: str):
             error_mapped = [label_map_short2long.get(lbl, lbl) for lbl in error_raw]
             var_entry['error_llm'] = error_mapped
 
-        original_labels = set(var_entry.get('label_set_round_2', []))
+        original_labels = set(var_entry.get('label_set_round_1', []))
         error_labels = set(var_entry.get('error_llm', []))
         label_set_llm = sorted(original_labels - error_labels)
 
