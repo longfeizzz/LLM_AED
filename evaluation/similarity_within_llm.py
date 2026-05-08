@@ -57,7 +57,7 @@ def extract_reasons(rec, use_validation=False):
     buckets = {"entailment": [], "neutral": [], "contradiction": []}
     ge = rec.get("generated_explanations") 
     for item in ge:
-        if not isinstance(item, (list, tuple)) or len(item) < 3:
+        if not isinstance(item, (list, tuple)) or len(item) < 2:
             print(f"[WARN] Invalid generated_explanations item: {item}")
             continue
         reason = item[0]

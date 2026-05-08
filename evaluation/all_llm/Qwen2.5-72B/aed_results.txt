@@ -1,0 +1,4 @@
+
+Evaluation Result:
+Method	AP	P@100	R@100
+scores	14.2	16.0	12.4

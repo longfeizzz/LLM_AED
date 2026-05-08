@@ -1,4 +1,4 @@
-import os, glob, json, itertools, logging
+import os, glob, json, itertools
 from collections import Counter
 import numpy as np
 import spacy
@@ -9,18 +9,7 @@ import sys
 
 ROOT_LLM_DIR = sys.argv[1]
 ROOT_VAR_FILE = sys.argv[2]
-LOG_PATH = "./llm_varierr_similarity.log"
 N_GRAMS = [1, 2, 3]
-
-
-
-logging.basicConfig(
-    filename=LOG_PATH,
-    level=logging.INFO,
-    format="%(asctime)s | %(message)s"
-)
-log = logging.getLogger(__name__)
-
 
 nlp = spacy.load("en_core_web_md")
 
@@ -149,7 +138,7 @@ def main():
 
     for fname, llm_records in llm_sets:
         if len(llm_records) != len(var_records):
-            log.warning(f"[{fname}] incorrct number: LLM={len(llm_records)}, VariErr={len(var_records)}")
+            print(f"[{fname}] incorrct number: LLM={len(llm_records)}, VariErr={len(var_records)}")
             continue
 
         totals = {
@@ -158,7 +147,7 @@ def main():
             "cosine": [],
             "euclidean": []
         }
-        log.info(f"Processing file: {fname} with {len(llm_records)} records")
+        print(f"Processing file: {fname} with {len(llm_records)} records")
 
 
         for rec_llm, rec_var in zip(llm_records, var_records):
@@ -185,20 +174,20 @@ def main():
                         totals["cosine"].append(cos)
                         totals["euclidean"].append(euc)
 
-        log.info("=== Global Average Results ===")
+        print("=== Global Average Results ===")
         for n in N_GRAMS:
             vals = totals["lexical"][n]
-            log.info(f"Lexical {n}-gram: {np.mean(vals):.3f}" if vals else f"Lexical {n}-gram: None")
+            print(f"Lexical {n}-gram: {np.mean(vals):.3f}" if vals else f"Lexical {n}-gram: None")
         for n in N_GRAMS:
             vals = totals["syntactic"][n]
-            log.info(f"Syntactic {n}-gram: {np.mean(vals):.3f}" if vals else f"Syntactic {n}-gram: None")
+            print(f"Syntactic {n}-gram: {np.mean(vals):.3f}" if vals else f"Syntactic {n}-gram: None")
         if totals["cosine"]:
-            log.info(f"Semantic cosine similarity: {np.mean(totals['cosine']):.3f}")
-            log.info(f"Semantic euclidean similarity: {np.mean(totals['euclidean']):.3f}")
+            print(f"Semantic cosine similarity: {np.mean(totals['cosine']):.3f}")
+            print(f"Semantic euclidean similarity: {np.mean(totals['euclidean']):.3f}")
         else:
-            log.info("Semantic: None")
+            print("Semantic: None")
 
-        print(f"Done. Log saved to: {os.path.abspath(LOG_PATH)}")
+        print(f"Done. ")
 
 if __name__ == "__main__":
     main()

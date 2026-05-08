@@ -1,6 +1,7 @@
 import json, re, itertools
 from collections import Counter
 import numpy as np
+from pathlib import Path
 import spacy
 import torch
 from transformers import AutoTokenizer, AutoModel
@@ -10,13 +11,12 @@ from scipy.spatial.distance import cosine, euclidean
 ROOT_FILE = "../dataset/varierr.json"
 N_GRAMS = [1, 2, 3]
 
-nlp = spacy.load("en_core_web_md")
 
-def spacy_tokens(text):
+def spacy_tokens(text, nlp):
     doc = nlp(text)
     return [t.text.lower() for t in doc if not t.is_punct and not t.is_space]
 
-def spacy_pos(text):
+def spacy_pos(text, nlp):
     doc = nlp(text)
     return [t.pos_ for t in doc]
 
@@ -33,14 +33,14 @@ def overlap_ratio(ca, cb):
         (count_1_in_2 + count_2_in_1) / combined_length if combined_length > 0 else float("nan")
     )
 
-def lexical_diversity(a_text, b_text, n):
-    ca = get_ngram_counts(spacy_tokens(a_text), n)
-    cb = get_ngram_counts(spacy_tokens(b_text), n)
+def lexical_diversity(a_text, b_text, n, nlp):
+    ca = get_ngram_counts(spacy_tokens(a_text, nlp), n)
+    cb = get_ngram_counts(spacy_tokens(b_text, nlp), n)
     return overlap_ratio(ca, cb)
 
-def syntactic_diversity(a_text, b_text, n):
-    ca = get_ngram_counts(spacy_pos(a_text), n)
-    cb = get_ngram_counts(spacy_pos(b_text), n)
+def syntactic_diversity(a_text, b_text, n, nlp):
+    ca = get_ngram_counts(spacy_pos(a_text, nlp), n)
+    cb = get_ngram_counts(spacy_pos(b_text, nlp), n)
     return overlap_ratio(ca, cb)
 
 def load_records(path):
@@ -63,11 +63,7 @@ def extract_reasons(rec: dict, key: str):
             reasons.append(item.strip())
     return reasons
 
-device = "cuda" if torch.cuda.is_available() else "cpu"
-tok = AutoTokenizer.from_pretrained("sentence-transformers/all-distilroberta-v1")
-model = AutoModel.from_pretrained("sentence-transformers/all-distilroberta-v1").to(device).eval()
-
-def sentence_embedding(text):
+def sentence_embedding(text, tok, model, device):
     encoded = tok([text], padding=True, truncation=True, return_tensors="pt").to(device)
     with torch.no_grad():
         out = model(**encoded, output_hidden_states=True)
@@ -84,8 +80,22 @@ def euclidean_similarity(e1, e2):
     return 1.0 / (1.0 + np.linalg.norm(e1 - e2))
 
 
-
 def main():
+    # Verify all paths before loading models
+    root_path = Path(ROOT_FILE)
+    
+    if not root_path.exists():
+        print(f"[Error] ROOT_FILE not found: {root_path.absolute()}")
+        return False
+        
+    # Load models after path validation
+    nlp = spacy.load("en_core_web_md")
+    
+    device = "cuda" if torch.cuda.is_available() else "cpu"
+    tok = AutoTokenizer.from_pretrained("sentence-transformers/all-distilroberta-v1")
+    model = AutoModel.from_pretrained("sentence-transformers/all-distilroberta-v1").to(device).eval()
+    print(" All models loaded successfully")
+    
     records = load_records(ROOT_FILE)
 
     totals = {
@@ -102,19 +112,19 @@ def main():
             if len(reasons) < 2:
                 continue
 
-            # token_lists = [spacy_tokens(r) for r in reasons]
-            embeds = [sentence_embedding(r) for r in reasons]
+            # token_lists = [spacy_tokens(r, nlp) for r in reasons]
+            embeds = [sentence_embedding(r, tok, model, device) for r in reasons]
 
             for i, j in itertools.combinations(range(len(reasons)), 2):
                 # lexical
                 for n in N_GRAMS:
                     totals["lexical"][n].append(
-                        lexical_diversity(reasons[i], reasons[j], n)
+                        lexical_diversity(reasons[i], reasons[j], n, nlp)
                     )
                 # syntactic
                 for n in N_GRAMS:
                     totals["syntactic"][n].append(
-                        syntactic_diversity(reasons[i], reasons[j], n)
+                        syntactic_diversity(reasons[i], reasons[j], n, nlp)
                     )
                 # semantic similarities
                 cos = cosine_similarity(embeds[i], embeds[j])
@@ -128,7 +138,7 @@ def main():
         vals = totals["lexical"][n]
         print(f"  {n}-gram: {np.mean(vals):.3f}" if vals else f"  {n}-gram: None")
 
-    print("Syntactic (POS):")
+    print("Syntactic:")
     for n in N_GRAMS:
         vals = totals["syntactic"][n]
         print(f"  {n}-gram: {np.mean(vals):.3f}" if vals else f"  {n}-gram: None")

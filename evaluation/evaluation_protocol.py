@@ -1,4 +1,5 @@
 import json
+import re
 import numpy as np
 import pandas as pd
 from pathlib import Path
@@ -55,18 +56,60 @@ def get_ground_truth(instances):
             id_to_gt[label_id] = label in errors
     return id_to_gt
 
+
+def average_score_file(score_path: Path, output_path: Path | None = None) -> Path:
+    with score_path.open("r", encoding="utf-8") as f:
+        raw_id_to_score = json.load(f)
+
+    grouped = {}
+    for k, v in raw_id_to_score.items():
+        if v is None:
+            continue
+        normalized_key = k
+        if "-" in k:
+            normalized_key = k.rsplit("-", 1)[0]
+        grouped.setdefault(normalized_key, []).append(v)
+
+    averaged_data = {k: -(sum(v) / len(v)) for k, v in grouped.items() if v}
+    if output_path is None:
+        output_path = score_path.parent / f"{score_path.stem}_avg.json"
+
+    with output_path.open("w", encoding="utf-8") as f:
+        json.dump(averaged_data, f, indent=2, ensure_ascii=False)
+
+    print(f"Averaged score file written to: {output_path}")
+    return output_path
+
+
 def build_score_table(varierr_path, score_path):
     # Load ground truth
     with open(varierr_path) as f:
         data = [json.loads(line) for line in f]
 
     with open(score_path) as f:
-        id_to_score = json.load(f)
-
+        raw_id_to_score = json.load(f)
 
     id_to_gt = get_ground_truth(data)
-    id_to_score = {k: v for k, v in id_to_score.items() if k in id_to_gt}
-    # id_to_score = {k: -float(v) for k, v in id_to_score.items() if k in id_to_gt}
+    id_to_score = {}
+
+    for k, v in raw_id_to_score.items():
+        if v is None:
+            continue
+
+        if k in id_to_gt:
+            id_to_score[k] = v
+            continue
+
+        m = re.match(r"(.+)-\d+$", k)
+        if m:
+            normalized_key = m.group(1)
+            if normalized_key in id_to_gt:
+                existing = id_to_score.get(normalized_key)
+                if existing is None:
+                    id_to_score[normalized_key] = v
+                else:
+                    id_to_score[normalized_key] = max(existing, v)
+
     metrics = compute_metrics(id_to_score, id_to_gt)
 
     df = pd.DataFrame([metrics], index=[score_path.stem])
@@ -79,9 +122,14 @@ def main():
 
     args = parser.parse_args()
 
+    # generate averaged score file if needed
+    # avg_score_path = average_score_file(args.score)
+    # print("Entering average_score_file")
+
+    score_path = args.score
     result = build_score_table(
         varierr_path=args.varierr,
-        score_path=args.score
+        score_path=score_path
     )
 
     print("\nEvaluation Result:")
