@@ -2,8 +2,12 @@ import json
 from collections import Counter
 from pathlib import Path
 
-VARIERR_FILE = "/LLM_AED/dataset/varierr/varierr.json"
-OUT_DIR      = "LLM_AED/dataset"
+
+SCRIPT_DIR = Path(__file__).resolve().parent
+REPO_ROOT = SCRIPT_DIR.parent
+
+OUT_DIR = REPO_ROOT / "fine-tuning" / "processed_data" / "baselines"
+VARIERR_FILE = REPO_ROOT / "dataset" / "varierr.json"
 
 def load_jsonl_to_dict_by_id(path: Path):
     data = {}
@@ -41,8 +45,8 @@ def main():
     out_dir = Path(OUT_DIR)
     out_dir.mkdir(parents=True, exist_ok=True)
 
-    out_r1 = out_dir / "varierr_r1.jsonl"
-    out_r2 = out_dir / "varierr_r2.jsonl"
+    out_r1 = out_dir / "varierr_r1.json"
+    out_r2 = out_dir / "varierr_r2.json"
 
     cleaned_r1, cleaned_r2 = [], []
 

@@ -7,7 +7,7 @@ from pathlib import Path
 SHORT2LONG = {"e": "entailment", "n": "neutral", "c": "contradiction"}
 ORDER = ["entailment", "neutral", "contradiction"]
 
-BASE_EVAL = "/LLM_AED/evaluation"
+BASE_EVAL = "../evaluation"
 
 def load_jsonl_by_id(path: Path):
     data = {}
@@ -64,14 +64,23 @@ def process_one_file(input_file: str, output_file: str = None):
         out_path = Path(output_file)
         out_dir = out_path.parent
         out_dir.mkdir(parents=True, exist_ok=True)
-
-        with out_path.open("w", encoding="utf-8") as f:
-                for item in cleaned_r1:
-                    f.write(json.dumps(item, ensure_ascii=False) + "\n")
-                for item in cleaned_r2:
-                    f.write(json.dumps(item, ensure_ascii=False) + "\n")
         
-        print(f"[OK] Saved: {out_path}")
+        before_path = out_dir / "before.json"
+        after_path = out_dir / "after.json"
+
+        # before = round_1
+        with before_path.open("w", encoding="utf-8") as f:
+            for item in cleaned_r1:
+                f.write(json.dumps(item, ensure_ascii=False) + "\n")
+
+        # after = round_2
+        with after_path.open("w", encoding="utf-8") as f:
+            for item in cleaned_r2:
+                f.write(json.dumps(item, ensure_ascii=False) + "\n")
+
+        print(f"[OK] Saved BEFORE: {before_path}")
+        print(f"[OK] Saved AFTER : {after_path}")
+
         return True
     else:
         print(f"[ERROR] output_file is required")

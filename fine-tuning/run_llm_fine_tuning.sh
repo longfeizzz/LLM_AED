@@ -2,43 +2,37 @@
 
 SCRIPT="llm_fine_tuning.py"
 
-BASE="../LLM_AED/evaluation"
+BASE="../evaluation"
 
-OUTPUT_BASE="../LLM_AED/fine-tuning/processed_data/llm_fine_tuning"
-
-declare -A MODEL_PATH
-MODEL_PATH["llama_8b"]="llama_8b_peer"
-MODEL_PATH["llama_70b"]="llama_70b_peer"
-MODEL_PATH["qwen_8b"]="qwen_8b_peer"
-MODEL_PATH["qwen_72b"]="qwen_72b_peer"
+OUTPUT_BASE="processed_data/llm_cleaned"
 
 declare -A THRESHOLD
 
-THRESHOLD["llama_8b,one-expl"]=0.8
-THRESHOLD["llama_8b,one-llm"]=0.2
-THRESHOLD["llama_8b,all-llm"]=0.2
+THRESHOLD["Llama-3.1-8B,one_expl"]=0.8
+THRESHOLD["Llama-3.1-8B,one_llm"]=0.2
+THRESHOLD["Llama-3.1-8B,all_llm"]=0.2
 
-THRESHOLD["llama_70b,one-expl"]=0.9
-THRESHOLD["llama_70b,one-llm"]=0.6
-THRESHOLD["llama_70b,all-llm"]=0.6
+THRESHOLD["Llama-3.3-70B,one_expl"]=0.9
+THRESHOLD["Llama-3.3-70B,one_llm"]=0.6
+THRESHOLD["Llama-3.3-70B,all_llm"]=0.6
 
-THRESHOLD["qwen_8b,one-expl"]=0.7
-THRESHOLD["qwen_8b,one-llm"]=0.2
-THRESHOLD["qwen_8b,all-llm"]=0.2
+THRESHOLD["Qwen2.5-7B,one_expl"]=0.7
+THRESHOLD["Qwen2.5-7B,one_llm"]=0.2
+THRESHOLD["Qwen2.5-7B,all_llm"]=0.2
 
-THRESHOLD["qwen_72b,one-expl"]=0.8
-THRESHOLD["qwen_72b,one-llm"]=0.7
-THRESHOLD["qwen_72b,all-llm"]=0.7
+THRESHOLD["Qwen2.5-72B,one_expl"]=0.8
+THRESHOLD["Qwen2.5-72B,one_llm"]=0.7
+THRESHOLD["Qwen2.5-72B,all_llm"]=0.7
 
 mkdir -p "$OUTPUT_BASE"
 
-for model in llama_8b llama_70b qwen_8b qwen_72b; do
-  for setting in one-expl one-llm all-llm; do
+for model in Llama-3.1-8B Llama-3.3-70B Qwen2.5-7B Qwen2.5-72B; do
+  for setting in one_expl one_llm all_llm; do
 
-    MODEL_DIR=${MODEL_PATH[$model]}
+    MODEL_DIR=$model
     TH=${THRESHOLD["$model,$setting"]}
 
-    INPUT_FILE="${BASE}/${setting}/${MODEL_NAME}/threshold/with_validation_${TH}.jsonl"
+    INPUT_FILE="${BASE}/${setting}/${MODEL_DIR}/threshold/with_validation_${TH}.jsonl"
 
     OUTPUT_DIR="${OUTPUT_BASE}/${setting}/${model}"
     mkdir -p "$OUTPUT_DIR"
