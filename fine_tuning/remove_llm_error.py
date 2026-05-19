@@ -4,7 +4,9 @@ from pathlib import Path
 from tqdm import tqdm
 import sys
 
-VARIERR_FILE = "../dataset/varierr.json"
+SCRIPT_DIR = Path(__file__).resolve().parent
+REPO_ROOT = SCRIPT_DIR.parent
+VARIERR_FILE = REPO_ROOT / "dataset" / "varierr.json"
 
 label_map_short2long = {'e': 'entailment', 'n': 'neutral', 'c': 'contradiction'}
 

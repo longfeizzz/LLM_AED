@@ -3,19 +3,21 @@
 CUDA_VISIBLE_DEVICES=0
 BNB_CUDA_VERSION=122
 
-directory="../training_data"
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+REPO_ROOT="$(cd "$SCRIPT_DIR/.." && pwd)"
+directory="$REPO_ROOT/training_data"
 
 find "$directory" -type f | while read file; do
     folder_path=$(dirname "$file")
     echo "Processing file: $file"
     TRAIN_FILE=$file
-    VALIDATION_FILE= ../dataset/dev_test/dev_cleaned.json
-    TEST_FILE= ../dataset/dev_test/test_cleaned.json
-    OUTPUT= ../output/bert_tuned
+    VALIDATION_FILE="$REPO_ROOT/dataset/dev_test/dev_cleaned.json"
+    TEST_FILE="$REPO_ROOT/dataset/dev_test/test_cleaned.json"
+    OUTPUT="$REPO_ROOT/output/bert_tuned"
     mkdir -p "$OUTPUT"
 
-    python run.py \
-      --model_name_or_path ../bert_finetuned \
+    python "$SCRIPT_DIR/run.py" \
+      --model_name_or_path "$SCRIPT_DIR/bert_finetune" \
       --train_file "$TRAIN_FILE" \
       --validation_file "$VALIDATION_FILE" \
       --test_file "$TEST_FILE" \

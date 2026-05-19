@@ -1,8 +1,10 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-CUDA_VISIBLE_DEVICES=$1
+CUDA_VISIBLE_DEVICES=${1:-0}
 export CUDA_VISIBLE_DEVICES
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+REPO_ROOT="$(cd "$SCRIPT_DIR/.." && pwd)"
 
 MODEL_TYPE="llama"
 MODELS=(
@@ -15,7 +17,7 @@ echo "1. one-expl"
 echo "============================================================"
 for model in "${MODELS[@]}"; do
   echo ">> $model"
-  python one_expl.py \
+  python "$SCRIPT_DIR/one_expl.py" \
     --model_type "$MODEL_TYPE" \
     --model_name_or_path "$model"
 done
@@ -25,7 +27,7 @@ echo "2. one-llm"
 echo "============================================================"
 for model in "${MODELS[@]}"; do
   echo ">> $model"
-  python one_llm.py \
+  python "$SCRIPT_DIR/one_llm.py" \
     --model_type "$MODEL_TYPE" \
     --model_name_or_path "$model"
 done
@@ -35,10 +37,10 @@ echo "3. all-llm"
 echo "============================================================"
 for model in "${MODELS[@]}"; do
   echo ">> $model"
-  python all_llm.py \
+  python "$SCRIPT_DIR/all_llm.py" \
     --model_type "$MODEL_TYPE" \
     --model_name_or_path "$model" \
-    --input_path ../processing/generation_all.jsonl
+    --input_path "$REPO_ROOT/processing/generation_all.jsonl"
 done
 
 echo "All done."

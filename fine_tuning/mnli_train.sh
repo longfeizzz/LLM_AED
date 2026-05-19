@@ -1,6 +1,7 @@
 export TASK_NAME=mnli
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
-python run.py \
+python "$SCRIPT_DIR/run.py" \
   --model_name_or_path bert-base-uncased \
   --task_name $TASK_NAME \
   --do_train \
@@ -15,7 +16,7 @@ python run.py \
   --weight_decay 0.0 \
   --lr_scheduler_type linear \
   --warmup_ratio 0.0 \
-  --output_dir /root/fine-tuning/bert_finetune \
+  --output_dir "$SCRIPT_DIR/bert_finetune" \
   --load_best_model_at_end \
   --evaluation_strategy steps \
   --save_strategy steps \
@@ -24,6 +25,6 @@ python run.py \
   --eval_steps 250 \
   --seed 42 \
   --logging_steps 100 \
-  --logging_dir /root/fine-tuning/bert_logs \
+  --logging_dir "$SCRIPT_DIR/bert_logs" \
   --metric_for_best_model eval_accuracy \
   --fp16 --overwrite_output_dir

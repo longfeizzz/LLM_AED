@@ -61,7 +61,7 @@ if __name__ == "__main__":
 
     if args.json_path is None:
         args.json_path = os.path.join(script_dir, "..", "dataset", "varierr.json")
-        args.json_path = os.path.normpath(args.json.path)
+        args.json_path = os.path.normpath(args.json_path)
 
     if args.output_dir is None:
         model_short = args.model_name.split("/")[-1].replace("-Instruct", "")

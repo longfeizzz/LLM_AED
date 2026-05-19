@@ -6,7 +6,7 @@ from pathlib import Path
 SCRIPT_DIR = Path(__file__).resolve().parent
 REPO_ROOT = SCRIPT_DIR.parent
 
-OUT_DIR = REPO_ROOT / "fine-tuning" / "processed_data" / "baselines"
+OUT_DIR = SCRIPT_DIR / "processed_data" / "baselines"
 VARIERR_FILE = REPO_ROOT / "dataset" / "varierr.json"
 
 def load_jsonl_to_dict_by_id(path: Path):

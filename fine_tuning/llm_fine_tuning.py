@@ -7,8 +7,6 @@ from pathlib import Path
 SHORT2LONG = {"e": "entailment", "n": "neutral", "c": "contradiction"}
 ORDER = ["entailment", "neutral", "contradiction"]
 
-BASE_EVAL = "../evaluation"
-
 def load_jsonl_by_id(path: Path):
     data = {}
     with path.open("r", encoding="utf-8") as f:
