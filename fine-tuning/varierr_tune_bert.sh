@@ -3,15 +3,15 @@
 CUDA_VISIBLE_DEVICES=0
 BNB_CUDA_VERSION=122
 
-directory="../train_chaosnli_dist"
+directory="../training_data"
 
 find "$directory" -type f | while read file; do
     folder_path=$(dirname "$file")
     echo "Processing file: $file"
     TRAIN_FILE=$file
-    VALIDATION_FILE= ../dataset/dev_cleaned.json
-    TEST_FILE= ../dataset/test_cleaned.json
-    OUTPUT= ../output/bert_repeated_errorless
+    VALIDATION_FILE= ../dataset/dev_test/dev_cleaned.json
+    TEST_FILE= ../dataset/dev_test/test_cleaned.json
+    OUTPUT= ../output/bert_tuned
     mkdir -p "$OUTPUT"
 
     python run.py \

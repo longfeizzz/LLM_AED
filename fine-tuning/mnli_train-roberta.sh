@@ -15,7 +15,7 @@ python run.py \
   --weight_decay 0.0 \
   --lr_scheduler_type linear \
   --warmup_ratio 0.0 \
-  --output_dir /root/MJD-fine-tuning/roberta_finetune \
+  --output_dir /root/fine-tuning/roberta_finetune \
   --load_best_model_at_end \
   --evaluation_strategy steps \
   --save_strategy steps \
@@ -24,6 +24,6 @@ python run.py \
   --eval_steps 250 \
   --seed 42 \
   --logging_steps 100 \
-  --logging_dir /root/MJD-fine-tuning/logs \
+  --logging_dir /root/fine-tuning/roberta_logs \
   --metric_for_best_model eval_accuracy \
   --fp16 --overwrite_output_dir
