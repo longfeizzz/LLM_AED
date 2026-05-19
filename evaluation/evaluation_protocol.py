@@ -6,6 +6,8 @@ from pathlib import Path
 from sklearn.metrics import average_precision_score, precision_score, recall_score
 import argparse
 
+REPO_ROOT = Path(__file__).resolve().parent.parent
+
 def recall_at_k(y_true, y_score, k):
     y_true = np.array(y_true)
     y_score = np.array(y_score)
@@ -117,7 +119,7 @@ def build_score_table(varierr_path, score_path):
 
 def main():
     parser = argparse.ArgumentParser(description="Evaluate LLM error detection using AP, P@100, and R@100.")
-    parser.add_argument("--varierr", type=Path, default = "../dataset/varierr.json")
+    parser.add_argument("--varierr", type=Path, default=REPO_ROOT / "dataset" / "varierr.json")
     parser.add_argument("--score", required=True, type=Path, help="Path to score file (JSON)")
 
     args = parser.parse_args()

@@ -33,7 +33,7 @@ THRESHOLD["Qwen2.5-7B,one_expl"]=0.7
 THRESHOLD["Qwen2.5-7B,one_llm"]=0.2
 THRESHOLD["Qwen2.5-7B,all_llm"]=0.2
 
-THRESHOLD["Qwen2.5-72B,one_expl"]=0.W
+THRESHOLD["Qwen2.5-72B,one_expl"]=0.8
 THRESHOLD["Qwen2.5-72B,one_llm"]=0.7
 THRESHOLD["Qwen2.5-72B,all_llm"]=0.7
 
@@ -46,7 +46,7 @@ for model in "${MODELS[@]}"; do
     FILE="${AFTER_BASE}/${setting}/${MODEL_NAME}/threshold/with_validation_${TH}.jsonl"
 
     echo "Running AFTER: $FILE"
-    python $SCRIPT "$FILE"
+    python "$SCRIPT" "$FILE"
 
   done
 done

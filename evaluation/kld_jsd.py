@@ -2,12 +2,14 @@ import os
 import json
 import csv
 import argparse
+from pathlib import Path
 from tqdm import tqdm
 import numpy as np
 import pandas as pd
 from scipy.spatial.distance import jensenshannon
 
 LABEL_ORDER = ["e", "n", "c"]  
+REPO_ROOT = Path(__file__).resolve().parent.parent
 
 
 def ensure_dir(path: str):
@@ -155,8 +157,8 @@ def summarize_means(csv_paths, out_csv):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--model_jsonl", required=True)
-    ap.add_argument("--varierr_json", default="../dataset/varierr.json")
-    ap.add_argument("--chaos_jsonl", default="../dataset/chaosNLI_mnli_m.jsonl")
+    ap.add_argument("--varierr_json", default=str(REPO_ROOT / "dataset" / "varierr.json"))
+    ap.add_argument("--chaos_jsonl", default=str(REPO_ROOT / "dataset" / "chaosNLI_mnli_m.jsonl"))
     ap.add_argument("--out_dir", required=True)
     ap.add_argument("--prefix", default="model")
     ap.add_argument("--round_idx", type=int, default=2)

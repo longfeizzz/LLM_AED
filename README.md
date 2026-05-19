@@ -66,7 +66,7 @@ python processing/processing.py \
   [--all_dir] 
 ```
 - `--generation_dir`: Directory containing `<model>_generation_raw` folders (optional).
-- `--input_jsonl`: Original VariErr dataset JSON file (optional).
+- `--input_json`: Original VariErr dataset JSON file (optional).
 - `--processing_dir`: Directory to save per-model JSONL files (optional).
 - `--all_dir`: Final merged output filename (optional).
 
@@ -264,10 +264,10 @@ Output will be displayed in terminal.
 
 
 
-## Downstream Fine-Tuning
+## Downstream Fine_Tuning
 ### Preprocessing
 
-We clean the input data for fine-tuning by converting label sets into soft label distributions.
+We clean the input data for fine_tuning by converting label sets into soft label distributions.
 Each file is in JSONL format. Each line (instance) has the following structure:
 ```
 {
@@ -281,14 +281,14 @@ Each file is in JSONL format. Each line (instance) has the following structure:
 #### VariErr baseline R1 and R2
 
 ```bash
-cd fine-tuning
+cd fine_tuning
 python baseline_r1_r2.py
 ```
 
-After running the script, two files are generated in the `LLM_AED/fine-tuning/processed_data/baselines/`directory.
+After running the script, two files are generated in the `LLM_AED/fine_tuning/processed_data/baselines/` directory.
 
 
-#### Fine-tuning with EVADE labels (setup (a))
+#### Fine_tuning with EVADE labels (setup (a))
 
 
 
@@ -296,7 +296,7 @@ After running the script, two files are generated in the `LLM_AED/fine-tuning/pr
 bash run_llm_fine_tuning.sh
 ```
 
-After running the script, two files are saved under `LLM_AED/fine-tuning/processed_data/llm_cleaned/<mode>/<model>/` for all the modes and models. Default thresholds are set the same as the ones reported in the paper.
+After running the script, two files are saved under `LLM_AED/fine_tuning/processed_data/llm_cleaned/<mode>/<model>/` for all the modes and models. Default thresholds are set the same as the ones reported in the paper.
 
 
 #### Remove EVADE errors from VariErr R1 (setup (b))
@@ -305,21 +305,21 @@ After running the script, two files are saved under `LLM_AED/fine-tuning/process
 bash run_remove_llm_error.sh
 ```
 
-Processed data will be saved under `LLM_AED/fine-tuning/processed_data/without_llm_error/<mode>/<model>/`
+Processed data will be saved under `LLM_AED/fine_tuning/processed_data/without_llm_error/<mode>/<model>/`
 
 
-### Model Fine-tuning
+### Model Fine_tuning
 Place the processed training data into the designated folder, then update the corresponding directory paths in the scripts before running them.
 
 First, run the following commands so that the model obtains a basic understanding of the NLI task:
 
 ```bash
-cd fine-tuning
+cd fine_tuning
 bash mnli_train.sh
 bash mnli_train_roberta.sh
 ```
 
-After that, start fine-tuning with:
+After that, start fine_tuning with:
 
 
 ```bash

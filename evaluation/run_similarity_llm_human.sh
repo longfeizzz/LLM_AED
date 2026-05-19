@@ -42,7 +42,7 @@ THRESHOLD["Qwen2.5-72B,one_expl"]=0.8
 THRESHOLD["Qwen2.5-72B,one_llm"]=0.7
 THRESHOLD["Qwen2.5-72B,all_llm"]=0.7
 
-for model in Llama-3.1-8B Llama-3.1-70B Qwen2.5-7B Qwen2.5-72B; do
+for model in Llama-3.1-8B Llama-3.3-70B Qwen2.5-7B Qwen2.5-72B; do
   for setting in one_expl one_llm all_llm; do
 
     MODEL_NAME="$model"

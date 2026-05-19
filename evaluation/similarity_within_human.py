@@ -8,7 +8,7 @@ from transformers import AutoTokenizer, AutoModel
 import torch.nn.functional as F
 from scipy.spatial.distance import cosine, euclidean
 
-ROOT_FILE = "../dataset/varierr.json"
+ROOT_FILE = Path(__file__).resolve().parent.parent / "dataset" / "varierr.json"
 N_GRAMS = [1, 2, 3]
 
 
