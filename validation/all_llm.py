@@ -128,7 +128,7 @@ def main():
     input_path = Path(args.input_path) if args.input_path else repo_root / "processing" / "generation_all.jsonl"
     output_dir = Path(args.output_dir) if args.output_dir else repo_root / "validation" / "validation_results" / "all_llm" / model_short
     output_dir.mkdir(parents=True, exist_ok=True)
-    output_path = output_dir / "scores.json"
+    output_path = output_dir / "scores_all.json"
 
     print(f"Model: {args.model_name_or_path}")
     print(f"Model type: {args.model_type}")
@@ -178,7 +178,7 @@ def main():
     with open(output_path, "w") as f:
         json.dump(predictions, f, indent=2)
 
-    print(f"Done. Output saved to: {output_dir / 'scores.json'}")
+    print(f"Done. Output saved to: {output_dir / 'scores_all.json'}")
 
 
 if __name__ == "__main__":
